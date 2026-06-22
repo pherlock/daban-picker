@@ -14,55 +14,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # ── Phase 0: Python ──
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install daban-picker deps
-        run: pip install akshare pandas numpy requests
-
-      # ── Phase 1: 原始打板扫描 ──
-      - name: Daban Scan
+      # ── Phase 1: 安装依赖 + 原始扫描 ──
+      - name: Install deps + Daban Scan
         run: |
-          echo "=== $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S') 北京 ==="
+          pip install -q akshare pandas numpy requests
+          echo "=== $(date '+%Y-%m-%d %H:%M:%S') 北京 ==="
           python daban_scanner.py --near-miss --ci
+          echo "SCAN_DATE=$(python -c 'from datetime import date; print(date.today().strftime(\"%Y%m%d\"))')" >> "$GITHUB_OUTPUT"
+        id: scan
 
-      # ── Phase 2: Vibe-Trading 增强分析 ──
-      - name: Install VT deps (lightweight)
-        run: pip install numpy pandas
+      # ── Phase 2: VT 增强分析 ──
+      - name: VT Enhance (auction + opening)
+        run: |
+          python daban_vt_enhance.py "$SCAN_DATE" --no-factor
+        env:
+          SCAN_DATE: ${{ steps.scan.outputs.SCAN_DATE }}
+        continue-on-error: true
 
-      - name: VT Enhance (auction + opening + Alpha Zoo)
-        run: python daban_vt_enhance.py --no-factor
+      # ── Phase 2b: Alpha Zoo 全量因子（按需启用）──
+      # 去掉下面两行的 # 即可启用：
+      # - name: VT Enhance (Full: Alpha Zoo factors)
+      #   run: python daban_vt_enhance.py "$SCAN_DATE"
 
-      # ── Phase 2b: Alpha Zoo 因子（仅在完整模式触发）
-      # 因子计算需要 252 天日线数据，在 GitHub Actions 上可行但耗时
-      # 去掉 --no-factor 即可启用，预计增加 2-3 分钟
-      # - name: VT Enhance (Full with Alpha Zoo)
-      #   run: python daban_vt_enhance.py
-
-      # ── Phase 3: Agent 深度研判（可选，需要 DEEPSEEK_API_KEY secret）
-      - name: Agent Analysis
-        if: env.DEEPSEEK_API_KEY != ''
+      # ── Phase 3: Agent 研判（需设置 DEEPSEEK_API_KEY secret）──
+      - name: Agent Deep Analysis
+        if: ${{ vars.DEEPSEEK_API_KEY != '' || secrets.DEEPSEEK_API_KEY != '' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
-          pip install vibe-trading-ai -q 2>/dev/null || true
-          if command -v vibe-trading &>/dev/null; then
-            vibe-trading run -p "$(cat << 'PROMPT'
-          分析 enhanced_results.json 中综合评分 Top 3 的打板候选标的。
-          结合竞价信号、开盘确认、Alpha 因子评分，
-          给出今日打板操作建议：买入时机、仓位分配、止损设置。
-          要求务实，用中文。
-          PROMPT
-          )" 2>&1 | tee agent_analysis.md
+          pip install -q vibe-trading-ai 2>/dev/null || echo "⚠️ vibe-trading-ai install failed"
+          if command -v vibe-trading &>/dev/null 2>&1; then
+            vibe-trading run -p "分析 enhanced_results.json 中 Top 3 打板候选，结合竞价信号和 Alpha 因子，给出今日操作建议。中文务实。" 2>&1 | tee agent_analysis.md || echo "⚠️ Agent analysis failed"
+          else
+            echo "⚠️ vibe-trading not available, skip agent analysis"
           fi
+        continue-on-error: true
 
-      # ── Phase 4: 提交所有结果 ──
+      # ── Phase 4: 提交结果 ──
       - name: Commit results
         if: always()
         run: |
           git config user.name "Daban Bot"
           git config user.email "bot@daban.local"
           git add scan_results.json enhanced_results.json agent_analysis.md 2>/dev/null || true
-          git diff --staged --quiet || (git commit -m "auto: $(TZ=Asia/Shanghai date '+%m/%d %H:%M') 打板+VT增强更新 [skip ci]" && git push || true)
+          git diff --staged --quiet || (git commit -m "auto: $(date '+%m/%d %H:%M') 打板+VT增强 [skip ci]" && git push || true)
