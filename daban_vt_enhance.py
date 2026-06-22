@@ -104,6 +104,7 @@ def analyze_auction(auction_df: pd.DataFrame | None) -> dict[str, Any]:
     price_col = col_map.get("price")
     if vol_col and price_col:
         total_vol = auction_df[vol_col].sum()
+        late = auction_df.tail(5)
         # 用每分钟平均量作为参考（近似）
         avg_per_min = auction_df[vol_col].mean()
         if avg_per_min > 0:
