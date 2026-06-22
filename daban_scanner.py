@@ -229,6 +229,10 @@ def scan(date_str: str | None = None, near_miss: bool = False, ci_mode: bool = F
     with open(RESULTS_FILE, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
+    # Webhook notification (CI mode only, same bot as wyckoff-picker)
+    if ci_mode:
+        send_feishu_webhook(result)
+
     if not ci_mode:
         # 终端输出
         print(f"\n📊 筛选漏斗 (原始涨停: {total})")
@@ -290,6 +294,53 @@ def scan(date_str: str | None = None, near_miss: bool = False, ci_mode: bool = F
                 print(f"     {nm['code']} {nm['name']} 未通过: {', '.join(nm['failed_rules'])}")
 
     return result
+
+
+def send_feishu_webhook(data: dict):
+    """Send scan results via Feishu webhook (same bot as wyckoff-picker)."""
+    webhook = os.environ.get("FEISHU_WEBHOOK", "")
+    if not webhook:
+        print("[webhook] FEISHU_WEBHOOK not set, skipping notification")
+        return
+
+    candidates = data.get("candidates", [])
+    near = data.get("near_miss", [])
+    hot = data.get("hot_sectors", [])[:5]
+
+    lines = []
+    lines.append("\U0001f3af 打板策略 | {} 早盘扫描\n".format(data['date']))
+
+    if candidates:
+        lines.append("\u2705 候选: {} 只\n".format(len(candidates)))
+        for c in candidates:
+            lines.append("\U0001f3c6 **{} {}** \u00a5{} {:+.2f}%\n".format(
+                c['code'], c['name'], c['price'], c['change_pct']))
+            lines.append("   封板 {} | 封单 {} | 换手 {:.1f}%\n".format(
+                c['first_seal_time'], c['seal_amount_str'], c['turnover']))
+            lines.append("   市值 {} | 板块 {}\n\n".format(
+                c['float_mcap_str'], c['sector']))
+    else:
+        lines.append("\u26a0\ufe0f 无候选标的 (共 {} 只涨停)\n\n".format(data['total_limit_ups']))
+
+    if hot:
+        lines.append("\U0001f525 热点板块:\n")
+        for h in hot:
+            lines.append("   {}: {} 家\n".format(h['sector'], h['count']))
+
+    if near:
+        lines.append("\n\U0001f50d 近失标的 ({} 只，差 1-2 条件):\n".format(len(near)))
+        for nm in near[:5]:
+            lines.append("   {} {} \u00a5{} | {}\n".format(
+                nm['code'], nm['name'], nm['price'], nm['sector']))
+            lines.append("   \u2192 {}\n".format(', '.join(nm['failed_rules'])))
+
+    lines.append("\n\u23f0 {} | Daban Scanner | \u4ec5\u4f9b\u53c2\u8003\n".format(
+        data.get('scanned_at', '')))
+
+    payload = {"title": "\U0001f3af {} 打板策略选股".format(data['date']), "text": "".join(lines)}
+    import requests
+    r = requests.post(webhook, json=payload, timeout=10)
+    print("[webhook] {} ({})".format('OK' if r.status_code == 200 else 'FAIL', r.status_code))
 
 
 # ============================================================

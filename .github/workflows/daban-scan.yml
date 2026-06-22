@@ -15,13 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Shanghai
+      FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install akshare pandas numpy
+        run: pip install akshare pandas numpy requests
       - name: Daban Daily Scan
         run: |
           echo "=== $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S') 北京 ==="
