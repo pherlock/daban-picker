@@ -298,7 +298,7 @@ def scan(date_str: str | None = None, near_miss: bool = False, ci_mode: bool = F
 
 def send_feishu_webhook(data: dict):
     """Send scan results via Feishu webhook (same bot as wyckoff-picker)."""
-    webhook = os.environ.get("FEISHU_WEBHOOK", "")
+    webhook = os.environ.get("FEISHU_WEBHOOK", "").replace("/bot/v2/hook/", "/bot/hook/")
     if not webhook:
         print("[webhook] FEISHU_WEBHOOK not set, skipping notification")
         return
