@@ -45,6 +45,7 @@ jobs:
           LANGCHAIN_TEMPERATURE: '0.0'
           TIMEOUT_SECONDS: '120'
           MAX_RETRIES: '2'
+          VIBE_TRADING_ALLOWED_FILE_ROOTS: ${{ github.workspace }}
         run: |
           if [ -z "$DEEPSEEK_API_KEY" ]; then
             echo "DEEPSEEK_API_KEY secret not set, skip agent analysis"
@@ -55,7 +56,7 @@ jobs:
             echo "vibe-trading not available, skip"
             exit 0
           fi
-          vibe-trading run -p "分析 enhanced_results.json 中 Top 3 打板候选，结合竞价信号和 Alpha 因子，给出今日操作建议。中文务实。" 2>&1 | tee agent_analysis.md || echo "Agent analysis completed with warnings"
+          vibe-trading run -p "分析 $GITHUB_WORKSPACE/enhanced_results.json 中综合评分 Top 3 的打板候选标的，结合竞价信号和 Alpha 因子评分，给出今日打板操作建议（买入时机、仓位、止损）。中文务实。" 2>&1 | tee agent_analysis.md || echo "Agent analysis completed with warnings"
         continue-on-error: true
 
       - name: Commit results
