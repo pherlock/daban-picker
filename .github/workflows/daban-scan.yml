@@ -6,6 +6,9 @@ on:
     - cron: '13 22 * * 0-4'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   scan-and-enhance:
     runs-on: ubuntu-latest
@@ -23,7 +26,7 @@ jobs:
           pip install -q akshare pandas numpy requests
           echo "=== $(date '+%Y-%m-%d %H:%M:%S') 北京 ==="
           python daban_scanner.py --near-miss --ci
-          echo "SCAN_DATE=$(python -c 'from datetime import date; print(date.today().strftime('%Y%m%d'))')" >> "$GITHUB_OUTPUT"
+          echo "SCAN_DATE=$(python -c 'from datetime import date; print(date.today().strftime("%Y%m%d"))')" >> "$GITHUB_OUTPUT"
         id: scan
 
       - name: VT Enhance (auction + opening)
@@ -35,18 +38,24 @@ jobs:
 
       - name: Agent Deep Analysis
         env:
+          LANGCHAIN_PROVIDER: deepseek
+          LANGCHAIN_MODEL_NAME: deepseek-chat
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: https://api.deepseek.com/v1
+          LANGCHAIN_TEMPERATURE: '0.0'
+          TIMEOUT_SECONDS: '120'
+          MAX_RETRIES: '2'
         run: |
           if [ -z "$DEEPSEEK_API_KEY" ]; then
-            echo "⏭️ DEEPSEEK_API_KEY secret not set, skip agent analysis"
+            echo "DEEPSEEK_API_KEY secret not set, skip agent analysis"
             exit 0
           fi
-          pip install -q vibe-trading-ai 2>/dev/null || echo "⚠️ vibe-trading-ai install failed"
-          if command -v vibe-trading &>/dev/null 2>&1; then
-            vibe-trading run -p "分析 enhanced_results.json 中 Top 3 打板候选，结合竞价信号和 Alpha 因子，给出今日操作建议。中文务实。" 2>&1 | tee agent_analysis.md || echo "⚠️ Agent analysis failed"
-          else
-            echo "⚠️ vibe-trading not available, skip agent analysis"
+          pip install -q vibe-trading-ai 2>/dev/null
+          if ! command -v vibe-trading >/dev/null 2>&1; then
+            echo "vibe-trading not available, skip"
+            exit 0
           fi
+          vibe-trading run -p "分析 enhanced_results.json 中 Top 3 打板候选，结合竞价信号和 Alpha 因子，给出今日操作建议。中文务实。" 2>&1 | tee agent_analysis.md || echo "Agent analysis completed with warnings"
         continue-on-error: true
 
       - name: Commit results
