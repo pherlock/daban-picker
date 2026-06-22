@@ -18,7 +18,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      # ── Phase 1: 安装依赖 + 原始扫描 ──
       - name: Install deps + Daban Scan
         run: |
           pip install -q akshare pandas numpy requests
@@ -27,7 +26,6 @@ jobs:
           echo "SCAN_DATE=$(python -c 'from datetime import date; print(date.today().strftime(\"%Y%m%d\"))')" >> "$GITHUB_OUTPUT"
         id: scan
 
-      # ── Phase 2: VT 增强分析 ──
       - name: VT Enhance (auction + opening)
         run: |
           python daban_vt_enhance.py "$SCAN_DATE" --no-factor
@@ -35,17 +33,14 @@ jobs:
           SCAN_DATE: ${{ steps.scan.outputs.SCAN_DATE }}
         continue-on-error: true
 
-      # ── Phase 2b: Alpha Zoo 全量因子（按需启用）──
-      # 去掉下面两行的 # 即可启用：
-      # - name: VT Enhance (Full: Alpha Zoo factors)
-      #   run: python daban_vt_enhance.py "$SCAN_DATE"
-
-      # ── Phase 3: Agent 研判（需设置 DEEPSEEK_API_KEY secret）──
       - name: Agent Deep Analysis
-        if: ${{ secrets.DEEPSEEK_API_KEY != '' }}
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
+          if [ -z "$DEEPSEEK_API_KEY" ]; then
+            echo "⏭️ DEEPSEEK_API_KEY secret not set, skip agent analysis"
+            exit 0
+          fi
           pip install -q vibe-trading-ai 2>/dev/null || echo "⚠️ vibe-trading-ai install failed"
           if command -v vibe-trading &>/dev/null 2>&1; then
             vibe-trading run -p "分析 enhanced_results.json 中 Top 3 打板候选，结合竞价信号和 Alpha 因子，给出今日操作建议。中文务实。" 2>&1 | tee agent_analysis.md || echo "⚠️ Agent analysis failed"
@@ -54,7 +49,6 @@ jobs:
           fi
         continue-on-error: true
 
-      # ── Phase 4: 提交结果 ──
       - name: Commit results
         if: always()
         run: |
