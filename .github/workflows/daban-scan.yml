@@ -1,36 +1,68 @@
-name: Daban Daily Scan
+name: Daban Daily Scan + VT Enhance
 
 on:
   schedule:
-    # 目标 10:30 北京时间 = 02:30 UTC
-    # 减去 GitHub 延迟 4h32min → 21:58 UTC 前一日
-    # 周日-周四（对应周一-周五北京）
     - cron: '58 21 * * 0-4'
-    # 兜底 10:45 北京时间 = 02:45 UTC → 22:13 UTC 前一日
     - cron: '13 22 * * 0-4'
   workflow_dispatch:
 
 jobs:
-  scan:
+  scan-and-enhance:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Shanghai
-      FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
     steps:
       - uses: actions/checkout@v4
+
+      # ── Phase 0: Python ──
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install dependencies
+
+      - name: Install daban-picker deps
         run: pip install akshare pandas numpy requests
-      - name: Daban Daily Scan
+
+      # ── Phase 1: 原始打板扫描 ──
+      - name: Daban Scan
         run: |
           echo "=== $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S') 北京 ==="
-          python daban_scanner.py --ci
+          python daban_scanner.py --near-miss --ci
+
+      # ── Phase 2: Vibe-Trading 增强分析 ──
+      - name: Install VT deps (lightweight)
+        run: pip install numpy pandas
+
+      - name: VT Enhance (auction + opening + Alpha Zoo)
+        run: python daban_vt_enhance.py --no-factor
+
+      # ── Phase 2b: Alpha Zoo 因子（仅在完整模式触发）
+      # 因子计算需要 252 天日线数据，在 GitHub Actions 上可行但耗时
+      # 去掉 --no-factor 即可启用，预计增加 2-3 分钟
+      # - name: VT Enhance (Full with Alpha Zoo)
+      #   run: python daban_vt_enhance.py
+
+      # ── Phase 3: Agent 深度研判（可选，需要 DEEPSEEK_API_KEY secret）
+      - name: Agent Analysis
+        if: env.DEEPSEEK_API_KEY != ''
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          pip install vibe-trading-ai -q 2>/dev/null || true
+          if command -v vibe-trading &>/dev/null; then
+            vibe-trading run -p "$(cat << 'PROMPT'
+          分析 enhanced_results.json 中综合评分 Top 3 的打板候选标的。
+          结合竞价信号、开盘确认、Alpha 因子评分，
+          给出今日打板操作建议：买入时机、仓位分配、止损设置。
+          要求务实，用中文。
+          PROMPT
+          )" 2>&1 | tee agent_analysis.md
+          fi
+
+      # ── Phase 4: 提交所有结果 ──
       - name: Commit results
         if: always()
         run: |
           git config user.name "Daban Bot"
           git config user.email "bot@daban.local"
-          git add scan_results.json 2>/dev/null || true
-          git diff --staged --quiet || (git commit -m "auto: $(TZ=Asia/Shanghai date '+%m/%d %H:%M') 打板选股更新 [skip ci]" && git push || true)
+          git add scan_results.json enhanced_results.json agent_analysis.md 2>/dev/null || true
+          git diff --staged --quiet || (git commit -m "auto: $(TZ=Asia/Shanghai date '+%m/%d %H:%M') 打板+VT增强更新 [skip ci]" && git push || true)

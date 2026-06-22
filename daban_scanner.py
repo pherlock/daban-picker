@@ -39,15 +39,15 @@ warnings.filterwarnings("ignore")
 # ============================================================
 # 策略参数
 # ============================================================
-SEAL_TIME_LIMIT = "100000"
+SEAL_TIME_LIMIT = "103000"
 MIN_SEAL_AMOUNT = 50_000_000
-MIN_TURNOVER = 5.0
-MAX_TURNOVER = 15.0
+MIN_TURNOVER = 3.0
+MAX_TURNOVER = 20.0
 MIN_MCAP = 3_000_000_000
-MAX_MCAP = 10_000_000_000
+MAX_MCAP = 30_000_000_000
 MAX_PRICE = 40.0
 BOARD_NUM = 1
-HOT_SECTOR_TOP_N = 8
+HOT_SECTOR_TOP_N = 12
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 RESULTS_FILE = os.path.join(SCRIPT_DIR, "scan_results.json")

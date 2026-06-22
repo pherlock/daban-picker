@@ -34,3 +34,24 @@ python3 codex_analyze.py --near-miss  # 近失名单
 ## 自动化
 
 GitHub Actions 每个交易日上午 10:30 自动运行扫描，结果写入 `scan_results.json`。
+
+## Vibe-Trading 增强分析
+
+```bash
+# 增强扫描（集合竞价 + 开盘量价 + Alpha Zoo 因子）
+python3 daban_vt_enhance.py                    # 当天
+python3 daban_vt_enhance.py 20260623           # 指定日期
+python3 daban_vt_enhance.py --no-factor        # 跳过因子计算（快）
+python3 daban_vt_enhance.py --auction-only     # 仅竞价分析
+```
+
+增强分析输出 `enhanced_results.json`，包含：
+- **Layer 1** 集合竞价信号（量比/趋势/末段抢筹）
+- **Layer 2** 开盘5分钟量价确认（方向/量能/分时形态）
+- **Layer 3** Alpha Zoo 三因子评分（动量/价值/质量）
+- 综合排名 + 操作建议
+
+增强后可喂给 Vibe-Trading agent 做深度研判：
+```bash
+cd /path/to/vibe-trading && vibe-trading run -p "分析 enhanced_results.json"
+```
