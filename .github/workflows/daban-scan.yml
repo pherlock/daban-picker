@@ -23,7 +23,7 @@ jobs:
           pip install -q akshare pandas numpy requests
           echo "=== $(date '+%Y-%m-%d %H:%M:%S') 北京 ==="
           python daban_scanner.py --near-miss --ci
-          echo "SCAN_DATE=$(python -c 'from datetime import date; print(date.today().strftime(\"%Y%m%d\"))')" >> "$GITHUB_OUTPUT"
+          echo "SCAN_DATE=$(python -c 'from datetime import date; print(date.today().strftime('%Y%m%d'))')" >> "$GITHUB_OUTPUT"
         id: scan
 
       - name: VT Enhance (auction + opening)
