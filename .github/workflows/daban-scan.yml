@@ -63,6 +63,7 @@ jobs:
         if: always()
         env:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SIGN_KEY: ${{ secrets.FEISHU_SIGN_KEY }}
         run: |
           set -x
           python3 feishu_notify.py 2>&1 | tee feishu_notify.log
