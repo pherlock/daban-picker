@@ -48,7 +48,7 @@ jobs:
           VIBE_TRADING_ALLOWED_FILE_ROOTS: ${{ github.workspace }}
         run: |
           if [ -z "$DEEPSEEK_API_KEY" ]; then
-            echo "DEEPSEEK_API_KEY secret not set, skip agent analysis"
+            echo "DEEPSEEK_API_KEY secret not set, skip"
             exit 0
           fi
           pip install -q vibe-trading-ai 2>/dev/null
@@ -60,89 +60,10 @@ jobs:
         continue-on-error: true
 
       - name: Feishu Notification
+        if: always()
         env:
           FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
-        run: |
-          if [ -z "$FEISHU_WEBHOOK" ]; then
-            echo "FEISHU_WEBHOOK secret not set, skip"
-            exit 0
-          fi
-
-          cat > /tmp/feishu_summary.py << 'PYEOF'
-          import json, sys
-          try:
-              with open('enhanced_results.json') as f:
-                  d = json.load(f)
-          except Exception:
-              print('暂无增强数据')
-              sys.exit(0)
-
-          s = d.get('summary', {})
-          lines = []
-          lines.append(
-              '📊 ' + d['date'] + ' 打板扫描 · '
-              + str(s.get('total_limit_ups',0)) + '涨停 → '
-              + str(s.get('candidates',0)) + '候选/'
-              + str(s.get('near_miss',0)) + '近失'
-          )
-          lines.append('')
-
-          top = d.get('top_picks', [])[:3]
-          if not top:
-              lines.append('😔 今日无高分候选')
-          else:
-              medals = ['🥇', '🥈', '🥉']
-              for i, t in enumerate(top):
-                  code = t.get('code','')
-                  name = t.get('name','')
-                  price = t.get('price','-')
-                  pct = t.get('change_pct','-')
-                  score = t.get('enhanced_score',0)
-                  auction = t.get('auction',{})
-                  sigs = auction.get('signals',[])
-                  sig_str = ' '.join(sigs[:3]) if sigs else ''
-                  lines.append(
-                      medals[i] + ' ' + code + ' ' + name
-                      + '  ¥' + str(price)
-                      + '  +' + str(pct) + '%  综合' + str(score) + '分'
-                  )
-                  if sig_str:
-                      lines.append('   ' + sig_str)
-
-          print('\n'.join(lines))
-          PYEOF
-
-          SUMMARY=$(python3 /tmp/feishu_summary.py 2>&1)
-          if [ -z "$SUMMARY" ]; then
-            echo "No summary to send"
-            exit 0
-          fi
-
-          python3 -c "
-          import json
-          summary = '''$SUMMARY'''
-          card = {
-              'msg_type': 'interactive',
-              'card': {
-                  'header': {
-                      'title': {'content': '🎯 今日打板扫描', 'tag': 'plain_text'},
-                      'template': 'blue'
-                  },
-                  'elements': [
-                      {'tag': 'div', 'text': {'tag': 'lark_md', 'content': summary}},
-                      {'tag': 'hr'},
-                      {'tag': 'note', 'elements': [
-                          {'tag': 'plain_text', 'content': 'Daban Bot · 每个交易日 10:30 自动推送'}
-                      ]}
-                  ]
-              }
-          }
-          print(json.dumps(card, ensure_ascii=False))
-          " > /tmp/feishu_card.json
-
-          curl -s -X POST "$FEISHU_WEBHOOK" \
-            -H "Content-Type: application/json" \
-            -d @/tmp/feishu_card.json || echo "Feishu notification failed (non-critical)"
+        run: python3 feishu_notify.py
         continue-on-error: true
 
       - name: Commit results
