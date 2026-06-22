@@ -1,0 +1,35 @@
+name: Daban Daily Scan
+
+on:
+  schedule:
+    # 目标 10:30 北京时间 = 02:30 UTC
+    # 减去 GitHub 延迟 4h32min → 21:58 UTC 前一日
+    # 周日-周四（对应周一-周五北京）
+    - cron: '58 21 * * 0-4'
+    # 兜底 10:45 北京时间 = 02:45 UTC → 22:13 UTC 前一日
+    - cron: '13 22 * * 0-4'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install akshare pandas numpy
+      - name: Daban Daily Scan
+        run: |
+          echo "=== $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S') 北京 ==="
+          python daban_scanner.py --ci
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "Daban Bot"
+          git config user.email "bot@daban.local"
+          git add scan_results.json 2>/dev/null || true
+          git diff --staged --quiet || (git commit -m "auto: $(TZ=Asia/Shanghai date '+%m/%d %H:%M') 打板选股更新 [skip ci]" && git push || true)
