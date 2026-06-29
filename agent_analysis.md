@@ -16,260 +16,250 @@ Prompt: 分析 /home/runner/work/daban-picker/daban-picker/enhanced_results.json
 
 Let me start by reading the file to understand its structure and content.
   - read_file /home/runner/work/daban-picker/daban-picker/enhanced_results.json  FAIL 0.0s  {"status": "error", "error": "File not found or path escapes workspace: /home/ru
-  - bash ls -la /home/runner/work/daban-picker/daban-picker/ 2>/dev/null || echo "Directo  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "total 176\ndrwxr
-文件存在，路径需要调整。让我读取它。
-  - read_document /home/runner/work/daban-picker/daban-picker/enhanced_results  OK 0.0s
-文件内容已读取。现在让我看看完整的文件，包括后面的 near_miss 和 alpha 因子部分。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== KEYS ===\n['
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== all_enhanced
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "Auction status d
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== FULL TOP PIC
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "=== ALL ENHANCED sorted by seal_a
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== all_enhanced
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== ALL ENHANCED
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== TOP PICKS (e
-现在让我看看这个文件所在的目录，看看有没有其他辅助文件（比如 alpha 因子数据）。
-  - bash ls -la /home/runner/work/daban-picker/daban-picker/ 2>/dev/null  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "total 176\ndrwxr
-  - read_file /home/runner/work/daban-picker/daban-picker/agent_analysis.md  FAIL 0.0s  {"status": "error", "error": "File not found or path escapes workspace: /home/ru
-  - bash cat /home/runner/work/daban-picker/daban-picker/agent_analysis.md  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "\nPreflight Chec
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "Top-level keys: 
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "date: 20260630\n
-现在让我看看所有 top_picks 的完整数据，以及 all_enhanced 中按封单额排序的前几名。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== ALL TOP PICK
-现在让我看看 all_enhanced 中所有 57 只票的完整数据，特别是竞价信号和封单情况。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "=== ALL ENHANCED (top 20 by seal_
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== ALL ENHANCED
-现在让我看看竞价信号更详细的数据，以及是否有 alpha 因子评分数据。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "Items with aucti
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "all_enhanced fir
-现在让我看看 top_picks 中所有标的的完整数据，包括竞价信号。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== ALL TOP PICK
-现在让我看看 all_enhanced 中所有 57 只票的竞价数据，看看有没有竞价信号非空的。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "Total items: 57\
-明白了。这个文件是盘后数据（涨停板复盘），竞价信号和 Alpha 因子评分字段存在但值为 0/空，说明这些数据是在盘中实时采集的，盘后回看时竞价时段已过。不过没关系，我们仍然可以根据封单额、首次封板时间、板块热度、流通市值等核心指标来做分析。
+  - bash find /home/runner/work/daban-picker -name "enhanced_results.json" 2>/dev/null; l  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "/home/runner/wor
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "{\n  \"date\": \
+数据已读取。由于文件中的 `enhanced_score` 和 `auction/opening` 评分字段均为 0（说明增强评分尚未实际计算），我需要根据原始打板数据中的关键指标（封板时间、封单额、换手率、流通市值、所属板块热度）来综合排序 Top 3。同时拉取今日实时竞价数据辅助判断。
 
-让我看看完整的 57 只票的排序情况。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "=== 全部57只涨停标的（按封单额排序）===\n  #    
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 全部57只涨停标的（按封
-现在数据非常清晰了。让我看看 top_picks 中综合评分 Top 3 的完整信息。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== TOP 3 BY ENH
-现在让我看看 top_picks 的排序依据——看起来 top_picks 是按连板+封单质量筛选的，但 enhanced_score 都是 0（因为竞价信号和 alpha 因子数据在盘后为空）。让我看看 top_picks 的原始排序逻辑。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== SUMMARY ===\
-现在数据完全清楚了。让我看看有没有其他辅助文件（比如 agent_analysis.md）来获取更多上下文。
-  - bash cat /home/runner/work/daban-picker/daban-picker/agent_analysis.md 2>/dev/null |   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "\nPreflight Chec
-  - bash cat /home/runner/work/daban-picker/daban-picker/agent_analysis.md 2>/dev/null |   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "14\n", "stderr":
-好的，agent_analysis.md 只有 14 行，是环境检查日志。现在让我看看目录下还有没有其他文件。
-  - bash ls -la /home/runner/work/daban-picker/daban-picker/  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "total 176\ndrwxr
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "Keys: ['date', '
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "date: 20260630\ntotal_limit_ups: 
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "date: 20260630\n
-现在数据非常完整了。让我看看 enhanced_results.json 中 top_picks 的排序（按 enhanced_score 还是按原始顺序）。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== TOP PICKS (o
-现在让我看看 all_enhanced 中所有 57 只票的完整数据，特别是那些封单额高但不在 top_picks 中的。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 全部57只涨停标的（按封
-现在数据非常清晰了。让我看看 top_picks 的筛选逻辑——top_picks 是 scan_results.json 中的 candidates（10只），而 enhanced_results.json 中的 top_picks 也是这 10 只。让我看看 enhanced_results.json 的 summary 来理解评分逻辑。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== SUMMARY ===\
-现在数据完全清楚了。今天是 **2026年6月30日（周二）**，这是盘后复盘数据。让我给出分析。
+先看看完整的 all_enhanced 数据，以及拉取今日行情和板块热点。
+  - bash python3 -c "
+import json
+with open('/home/runner/work/daban-picker/daban-picker/  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "000777 中核科技   | 
+现在拉取今日板块热点排名和这 Top 3 标的的实时行情/资金流向，辅助判断。
+  - get_sector_info ranking  - get_fund_flow .Blocked duplicate call: get_fund_flow (already succeeded)
+  OK 2.2s
+  OK 3.7s
+再拉一下今日（6月30日）的竞价数据，看看这三个标的早盘表现。
+  - get_market_data .Blocked duplicate call: get_sector_info (already succeeded)
+Blocked duplicate call: get_market_data (already succeeded)
+  OK 3.4s
+现在让我看看完整的 JSON 数据，包括所有字段。
+  - bash python3 -c "
+import json
+with open('/home/runner/work/daban-picker/daban-picker/  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "{\n  \"date\": \
+  - bash python3 -c "
+import json
+with open('/home/runner/work/daban-picker/daban-picker/  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "#1 002549 凯美特气  
+现在拉一下今日板块热点排名，确认通用设备和化学制品的板块热度。
+  - bash python3 -c "
+import json
+with open('/home/runner/work/daban-picker/daban-picker/  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "{\n  \"code\": \
+现在数据全了。让我再查一下今日（6月30日）这三个标的的实时行情，确认它们今天是否继续涨停或开板。
+  - bash python3 -c "
+import json
+with open('/home/runner/work/daban-picker/daban-picker/  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "#1 000777 中核科技  
+好的，数据全部到位。以下是完整分析报告。
 
 ---
 
-## 打板复盘分析：2026-06-30（周二）
+## 📊 打板候选 Top 3 综合分析与操作建议
 
-### 市场概况
+**数据来源：** `enhanced_results.json`（昨日6/29涨停数据）  
+**分析日期：** 2026年6月30日（今日）  
+**注意：** 文件中 `enhanced_score` / `auction` / `opening` 字段均为 0（增强评分未实际计算），以下评分基于原始打板指标 + 板块热度 + 资金面综合判定。
+
+---
+
+### 🥇 Top 1：中核科技（000777.SZ）—— 综合评分最高
 
 | 指标 | 数据 |
-|---|---|
-| 涨停总数 | **107只** |
-| 候选标的 | 10只（精选） |
-| 近端次新/跟风 | 47只 |
-| 数据生成时间 | 06:49（盘后） |
+|------|------|
+| 涨停价 | **18.48 元** |
+| 封板时间 | **09:32:21**（早盘秒板） |
+| 封单额 | **1.76 亿**（封单/市值比 2.5%） |
+| 换手率 | **3.41%**（极低，筹码锁定好） |
+| 流通市值 | **70.9 亿**（中小盘，适合连板） |
+| 板块 | **通用设备**（热门板块） |
+| 板块内地位 | 板块首板，龙头地位 |
 
-### 综合评分 Top 3 候选标的
+**评分逻辑：**
+- ⏱ 封板时间 **09:32** → 早盘秒板，资金态度坚决 ✅
+- 🔒 封单 **1.76亿** / 换手 **3.41%** → 抛压极小，主力控盘强 ✅
+- 📐 市值 **70亿** → 打板黄金市值区间（30-100亿）✅
+- 🔥 通用设备板块今日继续热门 → 有板块助攻 ✅
 
-由于 enhanced_score 中的竞价信号和 Alpha 因子评分在盘后为空（这些是盘中实时采集的字段），我按 **封单额 × 首封时间 × 板块热度 × 流通市值** 综合排序，Top 3 如下：
+**操作建议：**
+- **买入时机：** 今日若高开 **3%-5%**（约19.0-19.4元），竞价量能达标（>昨日10%），可竞价直接上车；若开在 **+7%以上**，等换手回封确认
+- **仓位：** **3成**（首板确认，仓位可重）
+- **止损：** 跌破 **17.5元**（涨停价 -5%）或开盘后30分钟无法封板则出局
+- **目标：** 2连板预期，看 **20.3元** 一线
 
 ---
 
-### 🥇 **#1 多氟多（002407）** — 化学制品
+### 🥈 Top 2：凯美特气（002549.SZ）—— 封板最早
 
 | 指标 | 数据 |
-|---|---|
-| 封单额 | **6.04亿**（全场最高，是#2的2倍+） |
-| 首封时间 | **09:25**（开盘秒板） |
-| 换手率 | 3.5%（极低，抛压小） |
-| 流通市值 | 492.6亿（大盘股，机构参与） |
-| 板块热度 | 化学制品（热门板块） |
+|------|------|
+| 涨停价 | **20.89 元** |
+| 封板时间 | **09:25:00**（开盘即封板） |
+| 封单额 | **1.76 亿** |
+| 换手率 | **8.86%**（偏高，有换手） |
+| 流通市值 | **144.6 亿**（偏大） |
+| 板块 | **化学制品**（热门板块） |
 
-**评价**：封单额断层第一（6亿 vs 第二名2.9亿），09:25秒板零抛压，换手仅3.5%，说明主力资金极度看好、筹码锁定极好。大盘股适合大资金进出。
+**评分逻辑：**
+- ⏱ **09:25 开盘秒板** → 全天最强封板信号 ✅
+- 🔒 封单1.76亿但市值144亿 → 封单/市值比仅1.2%，偏弱 ⚠️
+- 📐 换手 **8.86%** → 有充分换手，筹码交换健康 ✅
+- ⚠️ 市值 **144亿** → 偏大，连板难度高于70亿标的
+
+**操作建议：**
+- **买入时机：** 今日若开一字板（>+7%），**不排板**，等炸板回封时在 **+5%~+7%** 区间低吸；若开在 **+3%~+5%** 且竞价量能充足，可直接上车
+- **仓位：** **2成**（市值偏大，控制仓位）
+- **止损：** 跌破 **19.8元**（涨停价 -5%）或盘中跌破分时均线无法收回
+- **目标：** 1-2板预期，看 **23元** 附近
 
 ---
 
-### 🥈 **#2 雅克科技（002409）** — 半导体
+### 🥉 Top 3：雪人集团（002639.SZ）—— 通用设备双龙
 
 | 指标 | 数据 |
-|---|---|
-| 封单额 | **2.92亿**（全场第二） |
-| 首封时间 | 09:44（早盘封板） |
-| 换手率 | 13.08%（偏高，有换手） |
-| 流通市值 | 660.8亿（大盘股） |
-| 板块热度 | 半导体（热门赛道） |
+|------|------|
+| 涨停价 | **14.06 元** |
+| 封板时间 | **09:32:09** |
+| 封单额 | **1.57 亿** |
+| 换手率 | **4.08%**（低换手） |
+| 流通市值 | **92.7 亿** |
+| 板块 | **通用设备**（与中核科技同板块） |
 
-**评价**：半导体龙头，封单近3亿，有换手（13%）说明市场参与度高、筹码交换充分，比一字板更健康。缺点是换手偏高，次日抛压可能略大。
+**评分逻辑：**
+- ⏱ 封板 **09:32** → 与中核科技几乎同时封板 ✅
+- 🔒 封单1.57亿 / 换手4.08% → 筹码锁定好 ✅
+- 📐 市值 **92.7亿** → 适中 ✅
+- 🔥 与中核科技同属通用设备板块 → 板块效应强 ✅
+- ⚠️ 封单额略低于前两者，属于板块跟风角色
 
----
-
-### 🥉 **#3 旗滨集团（601636）** — 玻璃玻纤
-
-| 指标 | 数据 |
-|---|---|
-| 封单额 | **2.50亿**（全场第三） |
-| 首封时间 | 09:30（早盘秒板） |
-| 换手率 | 2.81%（极低） |
-| 流通市值 | 290.5亿（中大盘） |
-| 板块热度 | 玻璃玻纤 |
-
-**评价**：09:30秒板，换手仅2.8%，封单2.5亿/市值290亿，封单/市值比优秀。筹码锁定好，次日溢价概率高。
+**操作建议：**
+- **买入时机：** 今日观察中核科技是否继续强势。若中核科技一字板买不到，雪人集团可作为**板块龙二**在 **+4%~+6%** 换手充分后上车；若中核科技走弱，放弃雪人
+- **仓位：** **1.5成**（跟风标的，仓位减半）
+- **止损：** 跌破 **13.3元**（涨停价 -5%）或中核科技炸板翻绿
+- **目标：** 套利板预期，看 **15.5元**
 
 ---
 
-### 今日打板操作建议
+### 📋 今日打板策略总表
 
-#### 买入时机
+| 标的 | 代码 | 综合评分 | 建议仓位 | 买入区间 | 止损位 | 目标位 |
+|------|------|:--------:|:--------:|----------|--------|--------|
+| **中核科技** | 000777.SZ | ⭐⭐⭐⭐⭐ | **3成** | 竞价/高开3-5%上车 | 17.50 | 20.30 |
+| **凯美特气** | 002549.SZ | ⭐⭐⭐⭐ | **2成** | 炸板回封+5~+7%低吸 | 19.80 | 23.00 |
+| **雪人集团** | 002639.SZ | ⭐⭐⭐⭐ | **1.5成** | 中核强势则+4~+6%上车 | 13.30 | 15.50 |
 
-| 标的 | 策略 |
-|---|---|
-| **多氟多（002407）** | 如次日竞价高开≤5%、量比>2，可竞价参与或开盘回踩分时均线低吸；若一字板则放弃 |
-| **雅克科技（002409）** | 有换手板，次日若高开3-5%且量比>1.5，可打回封板；低开则放弃 |
-| **旗滨集团（601636）** | 秒板低换手，次日若竞价高开≤4%、量比>2，可竞价轻仓试错 |
+### ⚠️ 风险提示
 
-#### 仓位建议
+1. **今日大盘环境：** 若大盘低开或情绪退潮，上述所有标的**仓位减半**或放弃
+2. **竞价信号：** 若某标的竞价量能 < 昨日成交量的 **8%**，说明接力意愿不足，放弃
+3. **板块持续性：** 通用设备板块今日若出现大面积炸板，中核科技和雪人集团同步放弃
+4. **总仓位控制：** 三个标的合计不超过 **6成仓**，留足现金应对炸板补仓或次日止损
 
-| 标的 | 仓位 | 理由 |
-|---|---|---|
-| 多氟多 | **3成** | 封单断层第一，确定性最高，但大盘股弹性有限 |
-| 雅克科技 | **2成** | 有换手更健康，但封单/市值比不如多氟多 |
-| 旗滨集团 | **2成** | 低换手秒板，封单质量好 |
-| **总仓位** | **≤7成** | 留3成现金应对盘中变数 |
-
-#### 止损纪律
-
-| 条件 | 操作 |
-|---|---|
-| 次日开盘**低开>3%** | 直接放弃，不参与 |
-| 盘中**跌破开盘价** | 减半仓 |
-| 盘中**跌破昨日涨停价（-10%）** | 清仓止损 |
-| 炸板回封失败（封单<5000万） | 不参与回封打板 |
-
-#### 风险提示
-
-1. **多氟多**封单虽大但流通市值492亿，次日连板需要更大资金推动，若缩量加速则容易炸板
-2. **雅克科技**换手13%偏高，说明有部分获利盘出逃，次日需观察量能是否持续
-3. **旗滨集团**低换手秒板，次日若高开太多（>6%）则性价比下降，容易吃面
-4. 今日涨停107只，市场情绪偏热，**次日分化概率大**，切忌追高后排跟风股
-
-> ⚠️ **以上为盘后复盘分析，不构成投资建议。打板交易风险极高，请根据次日盘面实时信号决策。**
+> **核心原则：** 中核科技是今日首选，竞价达标直接上；凯美特气等换手回封；雪人集团看中核脸色行事。不排一字板，不追高开+8%以上。
 Status: SUCCESS
-Elapsed: 2m 24s
-Run ID: 20260630_065003_59_1507c6
-Run dir: /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/runs/20260630_065003_59_1507c6
+Elapsed: 56s
+Run ID: 20260630_071941_52_3c76fb
+Run dir: /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/runs/20260630_071941_52_3c76fb
 
-现在数据完全清楚了。今天是 **2026年6月30日（周二）**，这是盘后复盘数据。让我给出分析。
+好的，数据全部到位。以下是完整分析报告。
 
 ---
 
-## 打板复盘分析：2026-06-30（周二）
+## 📊 打板候选 Top 3 综合分析与操作建议
 
-### 市场概况
+**数据来源：** `enhanced_results.json`（昨日6/29涨停数据）  
+**分析日期：** 2026年6月30日（今日）  
+**注意：** 文件中 `enhanced_score` / `auction` / `opening` 字段均为 0（增强评分未实际计算），以下评分基于原始打板指标 + 板块热度 + 资金面综合判定。
+
+---
+
+### 🥇 Top 1：中核科技（000777.SZ）—— 综合评分最高
 
 | 指标 | 数据 |
-|---|---|
-| 涨停总数 | **107只** |
-| 候选标的 | 10只（精选） |
-| 近端次新/跟风 | 47只 |
-| 数据生成时间 | 06:49（盘后） |
+|------|------|
+| 涨停价 | **18.48 元** |
+| 封板时间 | **09:32:21**（早盘秒板） |
+| 封单额 | **1.76 亿**（封单/市值比 2.5%） |
+| 换手率 | **3.41%**（极低，筹码锁定好） |
+| 流通市值 | **70.9 亿**（中小盘，适合连板） |
+| 板块 | **通用设备**（热门板块） |
+| 板块内地位 | 板块首板，龙头地位 |
 
-### 综合评分 Top 3 候选标的
+**评分逻辑：**
+- ⏱ 封板时间 **09:32** → 早盘秒板，资金态度坚决 ✅
+- 🔒 封单 **1.76亿** / 换手 **3.41%** → 抛压极小，主力控盘强 ✅
+- 📐 市值 **70亿** → 打板黄金市值区间（30-100亿）✅
+- 🔥 通用设备板块今日继续热门 → 有板块助攻 ✅
 
-由于 enhanced_score 中的竞价信号和 Alpha 因子评分在盘后为空（这些是盘中实时采集的字段），我按 **封单额 × 首封时间 × 板块热度 × 流通市值** 综合排序，Top 3 如下：
+**操作建议：**
+- **买入时机：** 今日若高开 **3%-5%**（约19.0-19.4元），竞价量能达标（>昨日10%），可竞价直接上车；若开在 **+7%以上**，等换手回封确认
+- **仓位：** **3成**（首板确认，仓位可重）
+- **止损：** 跌破 **17.5元**（涨停价 -5%）或开盘后30分钟无法封板则出局
+- **目标：** 2连板预期，看 **20.3元** 一线
 
 ---
 
-### 🥇 **#1 多氟多（002407）** — 化学制品
+### 🥈 Top 2：凯美特气（002549.SZ）—— 封板最早
 
 | 指标 | 数据 |
-|---|---|
-| 封单额 | **6.04亿**（全场最高，是#2的2倍+） |
-| 首封时间 | **09:25**（开盘秒板） |
-| 换手率 | 3.5%（极低，抛压小） |
-| 流通市值 | 492.6亿（大盘股，机构参与） |
-| 板块热度 | 化学制品（热门板块） |
+|------|------|
+| 涨停价 | **20.89 元** |
+| 封板时间 | **09:25:00**（开盘即封板） |
+| 封单额 | **1.76 亿** |
+| 换手率 | **8.86%**（偏高，有换手） |
+| 流通市值 | **144.6 亿**（偏大） |
+| 板块 | **化学制品**（热门板块） |
 
-**评价**：封单额断层第一（6亿 vs 第二名2.9亿），09:25秒板零抛压，换手仅3.5%，说明主力资金极度看好、筹码锁定极好。大盘股适合大资金进出。
+**评分逻辑：**
+- ⏱ **09:25 开盘秒板** → 全天最强封板信号 ✅
+- 🔒 封单1.76亿但市值144亿 → 封单/市值比仅1.2%，偏弱 ⚠️
+- 📐 换手 **8.86%** → 有充分换手，筹码交换健康 ✅
+- ⚠️ 市值 **144亿** → 偏大，连板难度高于70亿标的
+
+**操作建议：**
+- **买入时机：** 今日若开一字板（>+7%），**不排板**，等炸板回封时在 **+5%~+7%** 区间低吸；若开在 **+3%~+5%** 且竞价量能充足，可直接上车
+- **仓位：** **2成**（市值偏大，控制仓位）
+- **止损：** 跌破 **19.8元**（涨停价 -5%）或盘中跌破分时均线无法收回
+- **目标：** 1-2板预期，看 **23元** 附近
 
 ---
 
-### 🥈 **#2 雅克科技（002409）** — 半导体
+### 🥉 Top 3：雪人集团（002639.SZ）—— 通用设备双龙
 
 | 指标 | 数据 |
-|---|---|
-| 封单额 | **2.92亿**（全场第二） |
-| 首封时间 | 09:44（早盘封板） |
-| 换手率 | 13.08%（偏高，有换手） |
-| 流通市值 | 660.8亿（大盘股） |
-| 板块热度 | 半导体（热门赛道） |
+|------|------|
+| 涨停价 | **14.06 元** |
+| 封板时间 | **09:32:09** |
+| 封单额 | **1.57 亿** |
+| 换手率 | **4.08%**（低换手） |
+| 流通市值 | **92.7 亿** |
+| 板块 | **通用设备**（与中核科技同板块） |
 
-**评价**：半导体龙头，封单近3亿，有换手（13%）说明市场参与度高、筹码交换充分，比一字板更健康。缺点是换手偏高，次日抛压可能略大。
+**评分逻辑：**
+- ⏱ 封板 **09:32** → 与中核科技几乎同时封板 ✅
+- 🔒 封单1.57亿 / 换手4.08% → 筹码锁定好 ✅
+- 📐 市值 **92.7亿** → 适中 ✅
+- 🔥 与中核科技同属通用设备板块 → 板块效应强 ✅
+- ⚠️ 封单额略低于前两者，属于板块跟风角色
 
----
-
-### 🥉 **#3 旗滨集团（601636）** — 玻璃玻纤
-
-| 指标 | 数据 |
-|---|---|
-| 封单额 | **2.50亿**（全场第三） |
-| 首封时间 | 09:30（早盘秒板） |
-| 换手率 | 2.81%（极低） |
-| 流通市值 | 290.5亿（中大盘） |
-| 板块热度 | 玻璃玻纤 |
-
-**评价**：09:30秒板，换手仅2.8%，封单2.5亿/市值290亿，封单/市值比优秀。筹码锁定好，次日溢价概率高。
+**操作建议：**
+- **买入时机：** 今日观察中核科技是否继续强势。若中核科技一字板买不到，雪人集团可作为**板块龙二**在 **+4%~+6%** 换手充分后上车；若中核科技走弱，放弃雪人
+- **仓位：** **1.5成**（跟风标的，仓位减半）
+- **止损：** 跌破 **13.3元**（涨停价 -5%）或中核科技炸板翻绿
+- **目标：** 套利板预期，看 **15.5元**
 
 ---
 
-### 今日打板操作建议
+### 📋 今日打板策略总表
 
-#### 买入时机
+| 标的 | 代码 | 综合评分 | 建议仓位 | 买入区间 | 止损位 | 目标位 |
+|------|------|:--------:|:--------:|----------|--------|--------|
+| **中核科技** | 000777.SZ | ⭐⭐⭐⭐⭐ | **3成** | 竞价/高开3-5%上车 | 17.50 | 20.30 |
+| **凯美特气** | 002549.SZ | ⭐⭐⭐⭐ | **2成** | 炸板回封+5~+7%低吸 | 19.80 | 23.00 |
+| **雪人集团** | 002639.SZ | ⭐⭐⭐⭐ | **1.5成** | 中核强势则+4~+6%上车 | 13.30 | 15.50 |
 
-| 标的 | 策略 |
-|---|---|
-| **多氟多（002407）** | 如次日竞价高开≤5%、量比>2，可竞价参与或开盘回踩分时均线低吸；若一字板则放弃 |
-| **雅克科技（002409）** | 有换手板，次日若高开3-5%且量比>1.5，可打回封板；低开则放弃 |
-| **旗滨集团（601636）** | 秒板低换手，次日若竞价高开≤4%、量比>2，可竞价轻仓试错 |
+### ⚠️ 风险提示
 
-#### 仓位建议
+1. **今日大盘环境：** 若大盘低开或情绪退潮，上述所有标的**仓位减半**或放弃
+2. **竞价信号：** 若某标的竞价量能 < 昨日成交量的 **8%**，说明接力意愿不足，放弃
+3. **板块持续性：** 通用设备板块今日若出现大面积炸板，中核科技和雪人集团同步放弃
+4. **总仓位控制：** 三个标的合计不超过 **6成仓**，留足现金应对炸板补仓或次日止损
 
-| 标的 | 仓位 | 理由 |
-|---|---|---|
-| 多氟多 | **3成** | 封单断层第一，确定性最高，但大盘股弹性有限 |
-| 雅克科技 | **2成** | 有换手更健康，但封单/市值比不如多氟多 |
-| 旗滨集团 | **2成** | 低换手秒板，封单质量好 |
-| **总仓位** | **≤7成** | 留3成现金应对盘中变数 |
-
-#### 止损纪律
-
-| 条件 | 操作 |
-|---|---|
-| 次日开盘**低开>3%** | 直接放弃，不参与 |
-| 盘中**跌破开盘价** | 减半仓 |
-| 盘中**跌破昨日涨停价（-10%）** | 清仓止损 |
-| 炸板回封失败（封单<5000万） | 不参与回封打板 |
-
-#### 风险提示
-
-1. **多氟多**封单虽大但流通市值492亿，次日连板需要更大资金推动，若缩量加速则容易炸板
-2. **雅克科技**换手13%偏高，说明有部分获利盘出逃，次日需观察量能是否持续
-3. **旗滨集团**低换手秒板，次日若高开太多（>6%）则性价比下降，容易吃面
-4. 今日涨停107只，市场情绪偏热，**次日分化概率大**，切忌追高后排跟风股
-
-> ⚠️ **以上为盘后复盘分析，不构成投资建议。打板交易风险极高，请根据次日盘面实时信号决策。**
---show 20260630_065003_59_1507c6  |  --continue 20260630_065003_59_1507c6 "..."  |  --code 20260630_065003_59_1507c6  |  --pine 20260630_065003_59_1507c6
+> **核心原则：** 中核科技是今日首选，竞价达标直接上；凯美特气等换手回封；雪人集团看中核脸色行事。不排一字板，不追高开+8%以上。
+--show 20260630_071941_52_3c76fb  |  --continue 20260630_071941_52_3c76fb "..."  |  --code 20260630_071941_52_3c76fb  |  --pine 20260630_071941_52_3c76fb
