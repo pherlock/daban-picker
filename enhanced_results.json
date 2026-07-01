@@ -1,11 +1,11 @@
 {
   "date": "20260702",
-  "enhanced_at": "2026-07-02 07:07:38",
+  "enhanced_at": "2026-07-02 07:45:32",
   "summary": {
     "total_limit_ups": 152,
     "candidates": 6,
     "near_miss": 54,
-    "auction_ok": 58,
+    "auction_ok": 60,
     "opening_ok": 0
   },
   "top_picks": [
@@ -2043,9 +2043,11 @@
         "封单>5000万"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -2074,9 +2076,11 @@
         "封单>5000万"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
