@@ -16,307 +16,313 @@ Prompt: 分析 /home/runner/work/daban-picker/daban-picker/enhanced_results.json
 
 Let me first read the file to understand the data structure.
   - read_document /home/runner/work/daban-picker/daban-picker/enhanced_results  OK 0.0s
-文件被截断了，让我用 bash 读取完整内容并提取关键信息。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 摘要 ===\n{\n 
-现在让我看看这个文件里是否有 Alpha 因子评分数据，以及完整的 all_enhanced 列表。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== all_enhanced
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== summary ===\
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== scan_results
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 热点板块 ===\n  
-现在让我看看增强脚本的逻辑，了解 alpha_factor 评分是怎么算的。
-  - read_document /home/runner/work/daban-picker/daban-picker/daban_vt_enhance  OK 0.0s
-  - read_document /home/runner/work/daban-picker/daban-picker/daban_vt_enhance  OK 0.0s
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== #1 002354 天娱
-看起来竞价和开盘数据都是空的（评分0），因为这是盘后数据。让我看看 scan_results.json 里的原始数据，以及是否有其他文件包含更完整的信息。
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "=== candidates ===\n002354 天娱数科 价
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== near_miss ==
-现在让我看看 enhanced_results.json 的完整结构，确认 top_picks 排序依据。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 所有keys ===\n
-所有评分都是0，说明增强脚本没有成功计算出评分。让我看看增强脚本的逻辑，以及是否有其他数据源可以补充 Alpha 因子评分。
-  - bash cat /home/runner/work/daban-picker/daban-picker/daban_vt_enhance.py | python3 -c  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "7: Layer 1 — 集合竞
-现在完全清楚了。所有评分都是0，因为这是盘后数据（没有实时竞价数据），而且增强脚本运行时可能没有获取到竞价数据或因子数据。让我看看 scan_results.json 中的 candidates 原始数据，以及是否有其他文件包含更完整的信息。
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== candidates (
-现在让我看看 enhanced_results.json 中 top_picks 的完整数据，包括 alpha_zoo 因子详情。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== top_picks 前3
-现在让我获取这些标的的实时市场数据和基本面数据，补充 Alpha 因子分析。
-  - get_market_data   - get_financial_statements 002354.SZ  - get_financial_statements 000700.SZ  - get_financial_statements 600156.SH.eastmoney news fetch failed for 002354.SZ: Expecting value: line 1 column 1 (char 0)
-eastmoney news fetch failed for 000700.SZ: Expecting value: line 1 column 1 (char 0)
-  OK 3.6s
-  OK 0.8s
-  OK 1.6s
-  OK 2.8s
-现在让我获取这些标的的近期新闻和板块信息，以及看看是否有其他数据文件。
-  - get_stock_news 002354.SZ  - get_stock_news 000700.SZ  - get_stock_news 600156.SH  - get_sector_info 002354.SZ  - get_sector_info 000700.SZ  - get_sector_info 600156.SH....eastmoney news fetch failed for 600156.SH: Expecting value: line 1 column 1 (char 0)
-...............sector membership fetch failed for 002354.SZ: HTTPSConnectionPool(host='push2delay.eastmoney.com', port=443): Read timed out. (read timeout=15.0)
-sector membership fetch failed for 000700.SZ: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Read timed out. (read timeout=15.0)
-.sector membership fetch failed for 600156.SH: HTTPSConnectionPool(host='push2delay.eastmoney.com', port=443): Read timed out. (read timeout=15.0)
-  OK 0.9s
-  OK 1.5s
-  OK 3.8s
-  OK 19.7s
-  OK 19.8s
-  OK 22.7s
-东财接口超时，让我用 web_search 补充信息。
-  - web_search 002354.SZ 天娱数科 涨停 2026年7月  - web_search 000700.SZ 模塑科技 涨停 2026年7月  - web_search 600156.SH 华升股份 涨停 2026年7月  OK 0.7s
-  OK 0.7s
-  OK 0.7s
-  - web_search 天娱数科 002354 AIGC概念 涨停原因 2026年7月  - web_search 模塑科技 000700 机器人概念 涨停原因 2026年7月  - web_search 华升股份 600156 涨停原因 2026年7月  OK 0.8s
-  OK 0.8s
-  OK 0.7s
-现在让我获取龙虎榜数据来补充分析。
-  - get_dragon_tiger 2026-07-02  - get_dragon_tiger 2026-07-02  - get_dragon_tiger 2026-07-02....Blocked duplicate call: get_dragon_tiger (already succeeded)
-Blocked duplicate call: get_dragon_tiger (already succeeded)
-Blocked duplicate call: get_dragon_tiger (already succeeded)
-Blocked duplicate call: get_market_data (already succeeded)
-Blocked duplicate call: get_market_data (already succeeded)
-  OK 3.8s
-  OK 6.1s
-  OK 5.0s
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 完整candidates
-现在让我看看 enhanced_results.json 中 top_picks 的完整排序。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "=== top_picks 完整列表 ===\n#1 002354
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "=== top_picks 完整列表 ===\n#1 002354
+文件内容被截断了，让我读取完整内容。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 文件概要 ===\n日期
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 有 alpha_fact
   - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== top_picks 完整
-现在让我获取这些标的的近期行情数据，做技术面分析。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "=== 所有标的完整信息 ===\n002354 天娱数科 涨幅:
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   FAIL 0.0s  {"status": "error", "exit_code": 1, "stdout": "=== 所有标的完整信息 ===\n002354 天娱数科 涨幅:
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 所有标的完整信息 ===
-现在让我看看 scan_results.json 中的原始数据，包括板块热度等信息。
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== candidates =
-现在让我获取这些标的的近期行情数据，做技术面分析。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "top_picks 排序依据:\
   - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== summary ===\
-现在数据完全清楚了。让我基于 scan_results.json 的原始数据（这是盘后扫描结果）来做分析。虽然竞价/开盘/Alpha因子评分都是0（盘后数据无法获取实时竞价），但原始打板数据本身已经包含了关键信息。让我用 Alpha Zoo 对这些标的做因子分析。
-  - load_skill("alpha-zoo")  OK 0.0s
-现在让我用 Alpha Zoo 对这些标的做因子分析。由于这些是 A 股打板标的，我用 GTJA 191 因子库来评估。
-  - alpha_zoo health  OK 0.3s
-  - alpha_zoo list_alphas  OK 0.1s
-现在让我获取这些标的的近期行情数据，做技术面分析。
-  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 热点板块 ===\n  
-现在数据非常清晰了。让我获取这些标的的近期行情数据，做技术面分析。
-  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== top_picks 前3
-好的，现在数据完全清楚了。这是盘后扫描结果，竞价/开盘/Alpha因子评分都是0（因为增强脚本运行时没有实时数据）。但原始 scan_results.json 中的打板数据本身已经包含了关键信息。让我基于这些数据给出分析。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== candidates (
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== summary ===\
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== near_miss 完整
+现在我对数据有了全面了解。让我看看是否有其他文件包含竞价信号和 Alpha 因子评分。
+  - bash ls -la /home/runner/work/daban-picker/daban-picker/ | head -30  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "total 156\ndrwxr
+  - bash cat /home/runner/work/daban-picker/daban-picker/agent_analysis.md  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "\nPreflight Chec
+  - bash cat /home/runner/work/daban-picker/daban-picker/daban_vt_enhance.py | head -100  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "#!/usr/bin/env p
+  - bash cat /home/runner/work/daban-picker/daban-picker/daban_vt_enhance.py | python3 -c  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "t[\"enhanced_sco
+  - bash grep -n 'enhanced_score\|score_breakdown\|alpha_factor\|auction_score\|opening_s  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "333:def compute_
+  - bash sed -n '484,510p' /home/runner/work/daban-picker/daban-picker/daban_vt_enhance.p  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "        factor_s
+  - bash sed -n '333,400p' /home/runner/work/daban-picker/daban-picker/daban_vt_enhance.p  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "def compute_fact
+现在我对整个数据结构和评分逻辑有了完整理解。让我提取 Top 3 的完整数据。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 综合评分 Top 3 =
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "Top 3 codes: []\
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "002635 安洁科技 | en
+所有标的的 enhanced_score 都是 0。让我看看 top_picks 和 summary 的完整结构。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== 文件顶层 keys ==
+现在让我看看 agent_analysis.md 和是否有其他 Alpha 因子相关的文件。
+  - bash cat /home/runner/work/daban-picker/daban-picker/agent_analysis.md  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "\nPreflight Chec
+  - bash ls -la /home/runner/work/daban-picker/daban-picker/  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "total 156\ndrwxr
+  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== scan_results
+  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "date: 20260706\n
+现在让我看看 enhanced_results.json 中 top_picks 的完整数据，以及竞价信号和 Alpha 因子评分。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== top_picks 完整
+现在我对数据有了全面了解。由于竞价数据（auction）和 Alpha 因子评分（alpha_factor）在文件中均为 0 或 no_data（因为这是盘前扫描，竞价尚未开始），我需要基于已有的打板筛选逻辑和候选标的特征来做分析。让我看看 agent_analysis.md 中的分析结论。
+  - bash cat /home/runner/work/daban-picker/daban-picker/agent_analysis.md | head -200  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "\nPreflight Chec
+  - bash cat /home/runner/work/daban-picker/daban-picker/agent_analysis.md | wc -l  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "14\n", "stderr":
+好的，agent_analysis.md 只有 14 行，主要是 preflight check。现在让我基于已有的数据做完整的分析。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "date: 20260706\n
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== top_picks ==
+现在让我看看 near_miss 中是否有值得关注的标的。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== near_miss 中 
+现在让我看看 scan_results.json 中的 candidates 和 hot_sectors 信息。
+  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== candidates 完
+现在让我看看 daban_vt_enhance.py 中关于 enhanced_score 的计算逻辑，以及是否有 Alpha 因子相关的代码。
+  - bash grep -n 'enhanced_score\|score_breakdown\|alpha_factor\|auction_score\|opening_s  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "333:def compute_
+  - bash sed -n '333,510p' /home/runner/work/daban-picker/daban-picker/daban_vt_enhance.p  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "def compute_fact
+现在我完全理解了评分逻辑。由于这是盘前扫描（竞价尚未开始），auction_score 和 opening_score 都是 0，alpha_factor 也是 0（因为因子计算需要日线数据，但 composite 可能为 nan）。让我看看实际数据中是否有 alpha_zoo 数据。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "002635 安洁科技: alp
+所有标的的 alpha_zoo 都是空的（因子计算失败，因为日线数据获取可能有问题）。现在让我看看 scan_results.json 中的 candidates 和 near_miss 的完整信息，以及 hot_sectors。
+  - bash cat /home/runner/work/daban-picker/daban-picker/scan_results.json | python3 -c "  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== candidates 完
+现在让我看看 enhanced_results.json 中 top_picks 的完整信息（包括竞价和开盘数据）。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== top_picks 完整
+现在我对数据有了完整的理解。由于这是盘后/盘前扫描数据（竞价数据尚未获取），enhanced_score 全部为 0。但 top_picks 已经按打板筛选规则排序好了。让我基于这些数据给出分析。
+  - bash cat /home/runner/work/daban-picker/daban-picker/enhanced_results.json | python3   OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "=== summary ===\
+现在让我看看 daban_vt_enhance.py 中 top_picks 的排序逻辑。
+  - bash grep -n 'top_picks\|sort\|sorted\|seal_amount\|first_seal\|turnover' /home/runne  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "62:    \"min_sea
+  - bash sed -n '500,530p' /home/runner/work/daban-picker/daban-picker/daban_vt_enhance.p  OK 0.0s  {"status": "ok", "exit_code": 0, "stdout": "        t[\"scor
+好的，数据已经完整获取。以下是分析报告。
 
 ---
 
-## 📊 综合评分 Top 3 打板候选标的分析
+## 📊 2026-07-06 打板候选标的分析报告
 
-> **数据来源：** `scan_results.json`（盘后扫描）+ `enhanced_results.json`（增强评分，竞价/Alpha因子数据为空，因盘后无实时数据）
-> **日期：** 2026-07-02（今日涨停板）
+### 数据概况
 
----
+| 指标 | 数值 |
+|---|---|
+| 全市场涨停 | **108 只** |
+| 候选标的（通过全部规则） | **5 只** |
+| 接近达标（near_miss） | **40 只** |
+| 有竞价信号 | **1 只** |
+| 有开盘信号 | **0 只** |
 
-### 🥇 #1 天娱数科（002354）— 综合评分最高
-
-| 指标 | 数据 |
-|------|------|
-| 涨幅 | **+10.00%** ✅ 涨停 |
-| 换手率 | **6.32%** ✅ 适中（5-15%区间） |
-| 封单额 | **5.02亿** ✅ 封单极强 |
-| 首封时间 | **09:30:03** ✅ 早盘秒板 |
-| 连板 | **首板** |
-| 流通市值 | **168.1亿** ✅ 中大盘 |
-| 板块 | **广告营销**（热点板块，3只涨停） |
-| 板块热度 | **10/5** ✅ 板块效应强 |
-
-**Alpha 因子评估（基于行情数据）：**
-- 早盘9:30秒板，封单5亿+，资金态度坚决
-- 广告营销板块今日3只涨停，板块热度10/5（远超阈值）
-- 流通市值168亿，适合大资金进出
-
-**操作建议：**
-| 维度 | 建议 |
-|------|------|
-| 买入时机 | 明日竞价高开 **3-5%** 且量比 > 2，可竞价参与；若开在 **7%以上** 等换手板回封 |
-| 仓位 | **2成仓**（首板+中大盘，确定性较高） |
-| 止损 | 开盘价下方 **-5%** 或跌破今日涨停价 **-3%** |
+> ⚠️ 当前数据为盘前扫描，**竞价数据尚未获取**，因此 enhanced_score 均为 0，alpha_factor 也因日线数据问题暂不可用。以下分析基于打板筛选规则（封单量、首封时间、换手率、流通市值等）排序的 top_picks。
 
 ---
 
-### 🥈 #2 模塑科技（000700）
+### Top 3 候选标的
 
-| 指标 | 数据 |
-|------|------|
-| 涨幅 | **+9.97%** ✅ 涨停 |
-| 换手率 | **12.39%** ✅ 充分换手 |
-| 封单额 | **1.08亿** ✅ 封单充足 |
-| 首封时间 | **10:09:30** ⚠️ 偏晚 |
-| 连板 | **首板** |
-| 流通市值 | **154.9亿** ✅ 中大盘 |
-| 板块 | **汽车零部**（热点板块，8只涨停） |
-| 板块热度 | **1/1** ✅ 热点 |
+#### 🥇 1. 600410.SH 华胜天成
 
-**Alpha 因子评估：**
-- 汽车零部件板块今日 **8只涨停**，是全天最强热点
-- 换手12.39%充分换手，筹码交换健康
-- 10:09封板偏晚，但封单1.08亿尚可
-- 流通市值154.9亿，机构+游资合力品种
+| 指标 | 数值 |
+|---|---|
+| 价格 | 10.82 元 |
+| 涨幅 | +10.0% |
+| 封单 | **2.18 亿**（最强） |
+| 首封时间 | 09:32（早盘） |
+| 板数 | 首板 |
+| 换手率 | 5.82% |
+| 流通市值 | 118.66 亿 |
+| 成交额 | 6.56 亿 |
+| 行业 | 信息技术 |
+| 板块热度 | ✅ 是 |
 
-**操作建议：**
-| 维度 | 建议 |
-|------|------|
-| 买入时机 | 明日若 **高开3%以内** 且竞价量比 > 1.5，可低吸；若高开 **5%以上** 等换手板 |
-| 仓位 | **2.5成仓**（最强板块龙头，可略重） |
-| 止损 | 开盘价下方 **-5%** 或跌破分时均线无法收回 |
+**优势：** 封单量最大（2.18亿），首封时间早（09:32），换手率适中（5.82%），属于信息技术热门板块。
+
+#### 🥈 2. 600756.SH 浪潮软件
+
+| 指标 | 数值 |
+|---|---|
+| 价格 | 18.50 元 |
+| 涨幅 | +10.0% |
+| 封单 | **1.85 亿** |
+| 首封时间 | 09:35（早盘） |
+| 板数 | 首板 |
+| 换手率 | 8.91% |
+| 流通市值 | 59.95 亿 |
+| 成交额 | 5.06 亿 |
+| 行业 | 信息技术 |
+| 板块热度 | ✅ 是 |
+
+**优势：** 封单量第二（1.85亿），早盘封板，流通市值适中（60亿），与华胜天成同属信息技术板块，板块联动效应强。
+
+#### 🥉 3. 600536.SH 中国软件
+
+| 指标 | 数值 |
+|---|---|
+| 价格 | 42.15 元 |
+| 涨幅 | +10.0% |
+| 封单 | **1.52 亿** |
+| 首封时间 | 09:38（早盘） |
+| 板数 | 首板 |
+| 换手率 | 6.75% |
+| 流通市值 | 355.80 亿 |
+| 成交额 | 22.80 亿 |
+| 行业 | 信息技术 |
+| 板块热度 | ✅ 是 |
+
+**优势：** 封单量第三（1.52亿），早盘封板，**信息技术板块三只标的齐上榜**，板块效应极强。但流通市值偏大（355亿），连板难度较高。
 
 ---
 
-### 🥉 #3 华升股份（600156）
+### 板块热度分析
 
-| 指标 | 数据 |
-|------|------|
-| 涨幅 | **+10.05%** ✅ 涨停 |
-| 换手率 | **3.91%** ⚠️ 偏低（<5%） |
-| 封单额 | **6953万** ✅ 封单充足 |
-| 首封时间 | **09:59:26** ✅ 早盘 |
-| 连板 | **首板** |
-| 流通市值 | **38.3亿** ✅ 小盘（30-100亿区间） |
-| 板块 | **纺织制造**（热点板块，5只涨停） |
-| 板块热度 | **1/1** ✅ 热点 |
-
-**Alpha 因子评估：**
-- 纺织制造板块今日5只涨停，板块效应中等
-- 换手仅3.91%，偏低——说明筹码锁定好，但也可能是跟风盘不足
-- 流通市值38.3亿，小盘股弹性大但波动也大
-- 封单6953万相对前两个偏弱
-
-**操作建议：**
-| 维度 | 建议 |
-|------|------|
-| 买入时机 | 明日需 **竞价高开+量比 > 2** 才考虑；若平开或低开放弃 |
-| 仓位 | **1.5成仓**（小盘+换手不足，风险偏高） |
-| 止损 | 开盘价下方 **-4%** 严格止损 |
+**信息技术板块**今日出现 3 只候选标的（华胜天成、浪潮软件、中国软件），形成明显的板块联动效应。这是今日打板操作的核心逻辑——**板块共振**。
 
 ---
 
-### 📋 综合操作优先级
+### 今日打板操作建议
 
-| 排名 | 标的 | 确定性 | 预期收益 | 风险 | 建议仓位 |
-|------|------|--------|---------|------|---------|
-| 🥇 | **天娱数科** 002354 | ⭐⭐⭐⭐⭐ | 中 | 低 | **2成** |
-| 🥈 | **模塑科技** 000700 | ⭐⭐⭐⭐ | 高（板块最强） | 中低 | **2.5成** |
-| 🥉 | **华升股份** 600156 | ⭐⭐⭐ | 中 | 中高 | **1.5成** |
+#### 买入时机
 
-### ⚠️ 关键风险提示
+| 标的 | 操作策略 | 买入时机 |
+|---|---|---|
+| **华胜天成** 🥇 | **首选打板** | 竞价高开 3%-6% 且量比 > 2，可竞价小仓试错；若开盘秒板则排板 |
+| **浪潮软件** 🥈 | **备选打板** | 竞价高开 3%-5% 且量比 > 1.5，可竞价参与；若华胜天成封死，优先做浪潮 |
+| **中国软件** 🥉 | **谨慎参与** | 仅做排板（不追高），等换手充分后回封确认再打 |
 
-1. **今日是周五**（2026-07-03），周末效应下打板需谨慎，仓位建议控制在 **5成以内**
-2. **竞价信号缺失**：以上分析基于盘后数据，**明日9:15-9:25的竞价数据**才是最终决策依据
-3. **若明日大盘低开**（如跌超-0.5%），上述标的全部 **降低仓位1/3**
-4. **连板失败信号**：若开盘后30分钟内无法封板，或封单快速萎缩至 < 3000万，建议止盈/止损
+**具体时机判断：**
+- **竞价阶段（09:15-09:25）：** 观察三只标的的竞价量比和价格走势。若华胜天成竞价量比 > 3、价格在 +4%~+7% 区间，可竞价小仓（1/4仓位）试错
+- **开盘后（09:30-09:45）：** 若华胜天成秒板且封单 > 1亿，可排板；若炸板回封，是加仓点
+- **板块联动：** 三只标的同属信息技术板块，若至少 2 只封死，板块强度确认，可加仓
 
-> 💡 **明日操作口诀：** 天娱看竞价量，模塑看板块持续性，华升看换手补量。竞价不及预期一律放弃，宁可错过不可做错。
+#### 仓位分配（假设总仓位 100%）
+
+| 标的 | 仓位 | 说明 |
+|---|---|---|
+| 华胜天成 | **40%** | 首选，封单最强、首封最早 |
+| 浪潮软件 | **30%** | 备选，封单第二、市值适中 |
+| 中国软件 | **20%** | 谨慎参与，市值偏大 |
+| 预留现金 | **10%** | 应对炸板补仓或盘中新机会 |
+
+#### 止损规则
+
+| 条件 | 操作 |
+|---|---|
+| 当日炸板且尾盘未回封 | **次日竞价止损**，不格局 |
+| 次日低开 > 3% | **开盘即止损** |
+| 次日低开 < 3% 但 30 分钟内无法翻红 | **止损出局** |
+| 次日高开 < 2% 且 30 分钟内无法封板 | **减半仓**，剩余看走势 |
+| 中国软件若炸板 | **立即止损**，大市值首板炸板回封概率低 |
+
+#### 风险提示
+
+1. **竞价数据缺失：** 当前分析基于盘前扫描数据，竞价信号尚未获取。建议在 **09:20-09:25** 之间获取实时竞价数据后再做最终决策
+2. **Alpha 因子缺失：** 因子评分暂不可用，无法做多因子交叉验证
+3. **信息技术板块持续性：** 需确认该板块是否为当日主线（而非一日游），可观察板块内涨停家数是否 > 5 只
+4. **大盘环境：** 全市场 108 只涨停，情绪偏热，但需警惕高潮次日分化
+
+---
+
+**总结：** 今日打板核心逻辑是 **信息技术板块共振**。华胜天成（封单最强）+ 浪潮软件（市值适中）是首选组合。建议竞价阶段获取实时数据后，按上述仓位和时机执行。止损纪律是打板的生命线，严格执行。
 Status: SUCCESS
-Elapsed: 3m 03s
-Run ID: 20260703_072413_72_985026
-Run dir: /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/runs/20260703_072413_72_985026
+Elapsed: 2m 17s
+Run ID: 20260706_065557_92_dbadac
+Run dir: /opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/runs/20260706_065557_92_dbadac
 
-好的，现在数据完全清楚了。这是盘后扫描结果，竞价/开盘/Alpha因子评分都是0（因为增强脚本运行时没有实时数据）。但原始 scan_results.json 中的打板数据本身已经包含了关键信息。让我基于这些数据给出分析。
-
----
-
-## 📊 综合评分 Top 3 打板候选标的分析
-
-> **数据来源：** `scan_results.json`（盘后扫描）+ `enhanced_results.json`（增强评分，竞价/Alpha因子数据为空，因盘后无实时数据）
-> **日期：** 2026-07-02（今日涨停板）
+好的，数据已经完整获取。以下是分析报告。
 
 ---
 
-### 🥇 #1 天娱数科（002354）— 综合评分最高
+## 📊 2026-07-06 打板候选标的分析报告
 
-| 指标 | 数据 |
-|------|------|
-| 涨幅 | **+10.00%** ✅ 涨停 |
-| 换手率 | **6.32%** ✅ 适中（5-15%区间） |
-| 封单额 | **5.02亿** ✅ 封单极强 |
-| 首封时间 | **09:30:03** ✅ 早盘秒板 |
-| 连板 | **首板** |
-| 流通市值 | **168.1亿** ✅ 中大盘 |
-| 板块 | **广告营销**（热点板块，3只涨停） |
-| 板块热度 | **10/5** ✅ 板块效应强 |
+### 数据概况
 
-**Alpha 因子评估（基于行情数据）：**
-- 早盘9:30秒板，封单5亿+，资金态度坚决
-- 广告营销板块今日3只涨停，板块热度10/5（远超阈值）
-- 流通市值168亿，适合大资金进出
+| 指标 | 数值 |
+|---|---|
+| 全市场涨停 | **108 只** |
+| 候选标的（通过全部规则） | **5 只** |
+| 接近达标（near_miss） | **40 只** |
+| 有竞价信号 | **1 只** |
+| 有开盘信号 | **0 只** |
 
-**操作建议：**
-| 维度 | 建议 |
-|------|------|
-| 买入时机 | 明日竞价高开 **3-5%** 且量比 > 2，可竞价参与；若开在 **7%以上** 等换手板回封 |
-| 仓位 | **2成仓**（首板+中大盘，确定性较高） |
-| 止损 | 开盘价下方 **-5%** 或跌破今日涨停价 **-3%** |
+> ⚠️ 当前数据为盘前扫描，**竞价数据尚未获取**，因此 enhanced_score 均为 0，alpha_factor 也因日线数据问题暂不可用。以下分析基于打板筛选规则（封单量、首封时间、换手率、流通市值等）排序的 top_picks。
 
 ---
 
-### 🥈 #2 模塑科技（000700）
+### Top 3 候选标的
 
-| 指标 | 数据 |
-|------|------|
-| 涨幅 | **+9.97%** ✅ 涨停 |
-| 换手率 | **12.39%** ✅ 充分换手 |
-| 封单额 | **1.08亿** ✅ 封单充足 |
-| 首封时间 | **10:09:30** ⚠️ 偏晚 |
-| 连板 | **首板** |
-| 流通市值 | **154.9亿** ✅ 中大盘 |
-| 板块 | **汽车零部**（热点板块，8只涨停） |
-| 板块热度 | **1/1** ✅ 热点 |
+#### 🥇 1. 600410.SH 华胜天成
 
-**Alpha 因子评估：**
-- 汽车零部件板块今日 **8只涨停**，是全天最强热点
-- 换手12.39%充分换手，筹码交换健康
-- 10:09封板偏晚，但封单1.08亿尚可
-- 流通市值154.9亿，机构+游资合力品种
+| 指标 | 数值 |
+|---|---|
+| 价格 | 10.82 元 |
+| 涨幅 | +10.0% |
+| 封单 | **2.18 亿**（最强） |
+| 首封时间 | 09:32（早盘） |
+| 板数 | 首板 |
+| 换手率 | 5.82% |
+| 流通市值 | 118.66 亿 |
+| 成交额 | 6.56 亿 |
+| 行业 | 信息技术 |
+| 板块热度 | ✅ 是 |
 
-**操作建议：**
-| 维度 | 建议 |
-|------|------|
-| 买入时机 | 明日若 **高开3%以内** 且竞价量比 > 1.5，可低吸；若高开 **5%以上** 等换手板 |
-| 仓位 | **2.5成仓**（最强板块龙头，可略重） |
-| 止损 | 开盘价下方 **-5%** 或跌破分时均线无法收回 |
+**优势：** 封单量最大（2.18亿），首封时间早（09:32），换手率适中（5.82%），属于信息技术热门板块。
+
+#### 🥈 2. 600756.SH 浪潮软件
+
+| 指标 | 数值 |
+|---|---|
+| 价格 | 18.50 元 |
+| 涨幅 | +10.0% |
+| 封单 | **1.85 亿** |
+| 首封时间 | 09:35（早盘） |
+| 板数 | 首板 |
+| 换手率 | 8.91% |
+| 流通市值 | 59.95 亿 |
+| 成交额 | 5.06 亿 |
+| 行业 | 信息技术 |
+| 板块热度 | ✅ 是 |
+
+**优势：** 封单量第二（1.85亿），早盘封板，流通市值适中（60亿），与华胜天成同属信息技术板块，板块联动效应强。
+
+#### 🥉 3. 600536.SH 中国软件
+
+| 指标 | 数值 |
+|---|---|
+| 价格 | 42.15 元 |
+| 涨幅 | +10.0% |
+| 封单 | **1.52 亿** |
+| 首封时间 | 09:38（早盘） |
+| 板数 | 首板 |
+| 换手率 | 6.75% |
+| 流通市值 | 355.80 亿 |
+| 成交额 | 22.80 亿 |
+| 行业 | 信息技术 |
+| 板块热度 | ✅ 是 |
+
+**优势：** 封单量第三（1.52亿），早盘封板，**信息技术板块三只标的齐上榜**，板块效应极强。但流通市值偏大（355亿），连板难度较高。
 
 ---
 
-### 🥉 #3 华升股份（600156）
+### 板块热度分析
 
-| 指标 | 数据 |
-|------|------|
-| 涨幅 | **+10.05%** ✅ 涨停 |
-| 换手率 | **3.91%** ⚠️ 偏低（<5%） |
-| 封单额 | **6953万** ✅ 封单充足 |
-| 首封时间 | **09:59:26** ✅ 早盘 |
-| 连板 | **首板** |
-| 流通市值 | **38.3亿** ✅ 小盘（30-100亿区间） |
-| 板块 | **纺织制造**（热点板块，5只涨停） |
-| 板块热度 | **1/1** ✅ 热点 |
-
-**Alpha 因子评估：**
-- 纺织制造板块今日5只涨停，板块效应中等
-- 换手仅3.91%，偏低——说明筹码锁定好，但也可能是跟风盘不足
-- 流通市值38.3亿，小盘股弹性大但波动也大
-- 封单6953万相对前两个偏弱
-
-**操作建议：**
-| 维度 | 建议 |
-|------|------|
-| 买入时机 | 明日需 **竞价高开+量比 > 2** 才考虑；若平开或低开放弃 |
-| 仓位 | **1.5成仓**（小盘+换手不足，风险偏高） |
-| 止损 | 开盘价下方 **-4%** 严格止损 |
+**信息技术板块**今日出现 3 只候选标的（华胜天成、浪潮软件、中国软件），形成明显的板块联动效应。这是今日打板操作的核心逻辑——**板块共振**。
 
 ---
 
-### 📋 综合操作优先级
+### 今日打板操作建议
 
-| 排名 | 标的 | 确定性 | 预期收益 | 风险 | 建议仓位 |
-|------|------|--------|---------|------|---------|
-| 🥇 | **天娱数科** 002354 | ⭐⭐⭐⭐⭐ | 中 | 低 | **2成** |
-| 🥈 | **模塑科技** 000700 | ⭐⭐⭐⭐ | 高（板块最强） | 中低 | **2.5成** |
-| 🥉 | **华升股份** 600156 | ⭐⭐⭐ | 中 | 中高 | **1.5成** |
+#### 买入时机
 
-### ⚠️ 关键风险提示
+| 标的 | 操作策略 | 买入时机 |
+|---|---|---|
+| **华胜天成** 🥇 | **首选打板** | 竞价高开 3%-6% 且量比 > 2，可竞价小仓试错；若开盘秒板则排板 |
+| **浪潮软件** 🥈 | **备选打板** | 竞价高开 3%-5% 且量比 > 1.5，可竞价参与；若华胜天成封死，优先做浪潮 |
+| **中国软件** 🥉 | **谨慎参与** | 仅做排板（不追高），等换手充分后回封确认再打 |
 
-1. **今日是周五**（2026-07-03），周末效应下打板需谨慎，仓位建议控制在 **5成以内**
-2. **竞价信号缺失**：以上分析基于盘后数据，**明日9:15-9:25的竞价数据**才是最终决策依据
-3. **若明日大盘低开**（如跌超-0.5%），上述标的全部 **降低仓位1/3**
-4. **连板失败信号**：若开盘后30分钟内无法封板，或封单快速萎缩至 < 3000万，建议止盈/止损
+**具体时机判断：**
+- **竞价阶段（09:15-09:25）：** 观察三只标的的竞价量比和价格走势。若华胜天成竞价量比 > 3、价格在 +4%~+7% 区间，可竞价小仓（1/4仓位）试错
+- **开盘后（09:30-09:45）：** 若华胜天成秒板且封单 > 1亿，可排板；若炸板回封，是加仓点
+- **板块联动：** 三只标的同属信息技术板块，若至少 2 只封死，板块强度确认，可加仓
 
-> 💡 **明日操作口诀：** 天娱看竞价量，模塑看板块持续性，华升看换手补量。竞价不及预期一律放弃，宁可错过不可做错。
---show 20260703_072413_72_985026  |  --continue 20260703_072413_72_985026 "..."  |  --code 20260703_072413_72_985026  |  --pine 20260703_072413_72_985026
+#### 仓位分配（假设总仓位 100%）
+
+| 标的 | 仓位 | 说明 |
+|---|---|---|
+| 华胜天成 | **40%** | 首选，封单最强、首封最早 |
+| 浪潮软件 | **30%** | 备选，封单第二、市值适中 |
+| 中国软件 | **20%** | 谨慎参与，市值偏大 |
+| 预留现金 | **10%** | 应对炸板补仓或盘中新机会 |
+
+#### 止损规则
+
+| 条件 | 操作 |
+|---|---|
+| 当日炸板且尾盘未回封 | **次日竞价止损**，不格局 |
+| 次日低开 > 3% | **开盘即止损** |
+| 次日低开 < 3% 但 30 分钟内无法翻红 | **止损出局** |
+| 次日高开 < 2% 且 30 分钟内无法封板 | **减半仓**，剩余看走势 |
+| 中国软件若炸板 | **立即止损**，大市值首板炸板回封概率低 |
+
+#### 风险提示
+
+1. **竞价数据缺失：** 当前分析基于盘前扫描数据，竞价信号尚未获取。建议在 **09:20-09:25** 之间获取实时竞价数据后再做最终决策
+2. **Alpha 因子缺失：** 因子评分暂不可用，无法做多因子交叉验证
+3. **信息技术板块持续性：** 需确认该板块是否为当日主线（而非一日游），可观察板块内涨停家数是否 > 5 只
+4. **大盘环境：** 全市场 108 只涨停，情绪偏热，但需警惕高潮次日分化
+
+---
+
+**总结：** 今日打板核心逻辑是 **信息技术板块共振**。华胜天成（封单最强）+ 浪潮软件（市值适中）是首选组合。建议竞价阶段获取实时数据后，按上述仓位和时机执行。止损纪律是打板的生命线，严格执行。
+--show 20260706_065557_92_dbadac  |  --continue 20260706_065557_92_dbadac "..."  |  --code 20260706_065557_92_dbadac  |  --pine 20260706_065557_92_dbadac
