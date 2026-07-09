@@ -1,11 +1,11 @@
 {
   "date": "20260710",
-  "enhanced_at": "2026-07-10 07:04:10",
+  "enhanced_at": "2026-07-10 07:37:13",
   "summary": {
     "total_limit_ups": 75,
     "candidates": 4,
     "near_miss": 29,
-    "auction_ok": 1,
+    "auction_ok": 2,
     "opening_ok": 0
   },
   "top_picks": [
@@ -63,9 +63,11 @@
       "board_stat": "1/1",
       "is_hot_sector": true,
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -392,9 +394,11 @@
       "board_stat": "1/1",
       "is_hot_sector": true,
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
