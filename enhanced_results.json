@@ -1,11 +1,11 @@
 {
   "date": "20260714",
-  "enhanced_at": "2026-07-14 06:45:47",
+  "enhanced_at": "2026-07-14 07:13:15",
   "summary": {
     "total_limit_ups": 29,
     "candidates": 1,
     "near_miss": 19,
-    "auction_ok": 3,
+    "auction_ok": 1,
     "opening_ok": 0
   },
   "top_picks": [
@@ -60,11 +60,9 @@
         "换手5-15%"
       ],
       "auction": {
-        "status": "ok",
-        "signals": [],
+        "status": "no_data",
         "score": 0,
-        "price_trend_pct": 0.0,
-        "total_auction_vol": 0
+        "signals": []
       },
       "opening": {
         "status": "no_data",
@@ -94,11 +92,9 @@
         "换手5-15%"
       ],
       "auction": {
-        "status": "ok",
-        "signals": [],
+        "status": "no_data",
         "score": 0,
-        "price_trend_pct": 0.0,
-        "total_auction_vol": 0
+        "signals": []
       },
       "opening": {
         "status": "no_data",
@@ -384,11 +380,9 @@
         "换手5-15%"
       ],
       "auction": {
-        "status": "ok",
-        "signals": [],
+        "status": "no_data",
         "score": 0,
-        "price_trend_pct": 0.0,
-        "total_auction_vol": 0
+        "signals": []
       },
       "opening": {
         "status": "no_data",
@@ -418,11 +412,9 @@
         "换手5-15%"
       ],
       "auction": {
-        "status": "ok",
-        "signals": [],
+        "status": "no_data",
         "score": 0,
-        "price_trend_pct": 0.0,
-        "total_auction_vol": 0
+        "signals": []
       },
       "opening": {
         "status": "no_data",
