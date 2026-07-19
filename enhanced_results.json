@@ -1,101 +1,29 @@
 {
-  "date": "20260717",
-  "enhanced_at": "2026-07-17 07:11:00",
+  "date": "20260720",
+  "enhanced_at": "2026-07-20 06:42:50",
   "summary": {
-    "total_limit_ups": 42,
+    "total_limit_ups": 33,
     "candidates": 3,
-    "near_miss": 25,
-    "auction_ok": 3,
+    "near_miss": 18,
+    "auction_ok": 21,
     "opening_ok": 0
   },
   "top_picks": [
     {
-      "code": "000920",
-      "name": "沃顿科技",
-      "price": 14.15,
-      "change_pct": 10.03,
-      "turnover": 3.55,
-      "seal_amount": 128555580,
-      "seal_amount_str": "12856万",
-      "first_seal_time": "093721",
-      "board_num": 1,
-      "float_mcap": 6687270444,
-      "float_mcap_str": "66.9亿",
-      "volume": 229939517,
-      "volume_str": "22994万",
-      "sector": "塑料",
-      "board_stat": "5/3",
-      "is_hot_sector": true,
-      "auction": {
-        "status": "ok",
-        "signals": [],
-        "score": 0,
-        "price_trend_pct": 0.0,
-        "total_auction_vol": 0
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "002173",
-      "name": "创新医疗",
-      "price": 17.44,
-      "change_pct": 10.03,
-      "turnover": 11.64,
-      "seal_amount": 108202992,
-      "seal_amount_str": "10820万",
-      "first_seal_time": "102527",
-      "board_num": 1,
-      "float_mcap": 7339886140,
-      "float_mcap_str": "73.4亿",
-      "volume": 828419440,
-      "volume_str": "82842万",
-      "sector": "医疗服务",
-      "board_stat": "1/1",
-      "is_hot_sector": true,
-      "auction": {
-        "status": "ok",
-        "signals": [],
-        "score": 0,
-        "price_trend_pct": 0.0,
-        "total_auction_vol": 0
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "600203",
-      "name": "福日电子",
-      "price": 11.92,
+      "code": "600744",
+      "name": "华银电力",
+      "price": 5.96,
       "change_pct": 9.96,
-      "turnover": 8.77,
-      "seal_amount": 105542075,
-      "seal_amount_str": "10554万",
-      "first_seal_time": "094503",
+      "turnover": 4.21,
+      "seal_amount": 179936971,
+      "seal_amount_str": "17994万",
+      "first_seal_time": "094318",
       "board_num": 1,
-      "float_mcap": 7068417937,
-      "float_mcap_str": "70.7亿",
-      "volume": 606816656,
-      "volume_str": "60682万",
-      "sector": "消费电子",
+      "float_mcap": 12105500673,
+      "float_mcap_str": "121.1亿",
+      "volume": 500534528,
+      "volume_str": "50053万",
+      "sector": "电力",
       "board_stat": "1/1",
       "is_hot_sector": true,
       "auction": {
@@ -118,147 +46,28 @@
       }
     },
     {
-      "code": "600664",
-      "name": "哈药股份",
-      "price": 4.94,
-      "change_pct": 10.02,
-      "turnover": 11.78,
-      "seal_amount_str": "26458万",
-      "seal_amount": 264581944,
-      "first_seal_time": "092502",
-      "float_mcap_str": "124.4亿",
-      "sector": "化学制药",
-      "failed_rules": [
-        "首板"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "002739",
-      "name": "儒意电影",
-      "price": 10.32,
-      "change_pct": 10.02,
-      "turnover": 3.98,
-      "seal_amount_str": "25014万",
-      "seal_amount": 250140360,
-      "first_seal_time": "093033",
-      "float_mcap_str": "214.9亿",
-      "sector": "影视院线",
-      "failed_rules": [
-        "首板"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "603496",
-      "name": "恒为科技",
-      "price": 25.08,
-      "change_pct": 10.0,
-      "turnover": 7.65,
-      "seal_amount_str": "16611万",
-      "seal_amount": 166110307,
-      "first_seal_time": "095812",
-      "float_mcap_str": "80.3亿",
-      "sector": "计算机设",
-      "failed_rules": [
-        "热点板块"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "600602",
-      "name": "云赛智联",
-      "price": 18.26,
-      "change_pct": 10.0,
-      "turnover": 3.19,
-      "seal_amount_str": "16252万",
-      "seal_amount": 162519971,
-      "first_seal_time": "093859",
-      "float_mcap_str": "196.2亿",
-      "sector": "软件开发",
-      "failed_rules": [
-        "热点板块"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "002632",
-      "name": "道明光学",
-      "price": 9.63,
+      "code": "600722",
+      "name": "金牛化工",
+      "price": 8.53,
       "change_pct": 10.06,
-      "turnover": 2.63,
-      "seal_amount_str": "13417万",
-      "seal_amount": 134171323,
-      "first_seal_time": "092500",
-      "float_mcap_str": "55.3亿",
-      "sector": "塑料",
-      "failed_rules": [
-        "换手5-15%"
-      ],
+      "turnover": 7.24,
+      "seal_amount": 92155467,
+      "seal_amount_str": "9216万",
+      "first_seal_time": "093849",
+      "board_num": 1,
+      "float_mcap": 5803126836,
+      "float_mcap_str": "58.0亿",
+      "volume": 410446560,
+      "volume_str": "41045万",
+      "sector": "化学原料",
+      "board_stat": "1/1",
+      "is_hot_sector": true,
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -273,23 +82,28 @@
       }
     },
     {
-      "code": "603716",
-      "name": "塞力医疗",
-      "price": 16.12,
-      "change_pct": 10.03,
-      "turnover": 12.13,
-      "seal_amount_str": "12736万",
-      "seal_amount": 127361895,
-      "first_seal_time": "111346",
-      "float_mcap_str": "36.4亿",
-      "sector": "医药商业",
-      "failed_rules": [
-        "<10:00"
-      ],
+      "code": "600644",
+      "name": "乐山电力",
+      "price": 9.01,
+      "change_pct": 10.01,
+      "turnover": 7.56,
+      "seal_amount": 63540276,
+      "seal_amount_str": "6354万",
+      "first_seal_time": "094528",
+      "board_num": 1,
+      "float_mcap": 5210670570,
+      "float_mcap_str": "52.1亿",
+      "volume": 387549168,
+      "volume_str": "38755万",
+      "sector": "电力",
+      "board_stat": "1/1",
+      "is_hot_sector": true,
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -304,23 +118,225 @@
       }
     },
     {
-      "code": "601595",
-      "name": "上海电影",
-      "price": 18.16,
-      "change_pct": 9.99,
-      "turnover": 3.21,
-      "seal_amount_str": "10722万",
-      "seal_amount": 107216640,
-      "first_seal_time": "105259",
-      "float_mcap_str": "81.4亿",
-      "sector": "影视院线",
+      "code": "603118",
+      "name": "共进股份",
+      "price": 14.95,
+      "change_pct": 10.01,
+      "turnover": 15.57,
+      "seal_amount_str": "8589万",
+      "seal_amount": 85886255,
+      "first_seal_time": "095016",
+      "float_mcap_str": "117.7亿",
+      "sector": "通信设备",
+      "failed_rules": [
+        "热点板块"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "003001",
+      "name": "中岩大地",
+      "price": 19.56,
+      "change_pct": 10.01,
+      "turnover": 5.09,
+      "seal_amount_str": "8487万",
+      "seal_amount": 84874419,
+      "first_seal_time": "093000",
+      "float_mcap_str": "22.4亿",
+      "sector": "专业工程",
+      "failed_rules": [
+        "市值30-100亿"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "001258",
+      "name": "立新能源",
+      "price": 8.27,
+      "change_pct": 9.97,
+      "turnover": 6.15,
+      "seal_amount_str": "8068万",
+      "seal_amount": 80677158,
+      "first_seal_time": "094600",
+      "float_mcap_str": "77.2亿",
+      "sector": "电力",
+      "failed_rules": [
+        "首板"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "000899",
+      "name": "赣能股份",
+      "price": 10.7,
+      "change_pct": 9.97,
+      "turnover": 3.91,
+      "seal_amount_str": "7741万",
+      "seal_amount": 77406421,
+      "first_seal_time": "110854",
+      "float_mcap_str": "104.4亿",
+      "sector": "电力",
       "failed_rules": [
         "<10:00"
       ],
       "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
         "status": "no_data",
         "score": 0,
         "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "300795",
+      "name": "米奥会展",
+      "price": 10.48,
+      "change_pct": 20.05,
+      "turnover": 9.44,
+      "seal_amount_str": "6849万",
+      "seal_amount": 68491652,
+      "first_seal_time": "093839",
+      "float_mcap_str": "18.2亿",
+      "sector": "专业服务",
+      "failed_rules": [
+        "主板",
+        "市值30-100亿"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "600982",
+      "name": "宁波能源",
+      "price": 5.09,
+      "change_pct": 9.94,
+      "turnover": 8.4,
+      "seal_amount_str": "6362万",
+      "seal_amount": 63621437,
+      "first_seal_time": "111748",
+      "float_mcap_str": "56.9亿",
+      "sector": "电力",
+      "failed_rules": [
+        "<10:00"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "600236",
+      "name": "桂冠电力",
+      "price": 10.62,
+      "change_pct": 10.05,
+      "turnover": 0.47,
+      "seal_amount_str": "6043万",
+      "seal_amount": 60427800,
+      "first_seal_time": "102143",
+      "float_mcap_str": "837.1亿",
+      "sector": "电力",
+      "failed_rules": [
+        "换手5-15%",
+        "市值30-100亿"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -337,92 +353,20 @@
   ],
   "all_enhanced": [
     {
-      "code": "000920",
-      "name": "沃顿科技",
-      "price": 14.15,
-      "change_pct": 10.03,
-      "turnover": 3.55,
-      "seal_amount": 128555580,
-      "seal_amount_str": "12856万",
-      "first_seal_time": "093721",
-      "board_num": 1,
-      "float_mcap": 6687270444,
-      "float_mcap_str": "66.9亿",
-      "volume": 229939517,
-      "volume_str": "22994万",
-      "sector": "塑料",
-      "board_stat": "5/3",
-      "is_hot_sector": true,
-      "auction": {
-        "status": "ok",
-        "signals": [],
-        "score": 0,
-        "price_trend_pct": 0.0,
-        "total_auction_vol": 0
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "002173",
-      "name": "创新医疗",
-      "price": 17.44,
-      "change_pct": 10.03,
-      "turnover": 11.64,
-      "seal_amount": 108202992,
-      "seal_amount_str": "10820万",
-      "first_seal_time": "102527",
-      "board_num": 1,
-      "float_mcap": 7339886140,
-      "float_mcap_str": "73.4亿",
-      "volume": 828419440,
-      "volume_str": "82842万",
-      "sector": "医疗服务",
-      "board_stat": "1/1",
-      "is_hot_sector": true,
-      "auction": {
-        "status": "ok",
-        "signals": [],
-        "score": 0,
-        "price_trend_pct": 0.0,
-        "total_auction_vol": 0
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "600203",
-      "name": "福日电子",
-      "price": 11.92,
+      "code": "600744",
+      "name": "华银电力",
+      "price": 5.96,
       "change_pct": 9.96,
-      "turnover": 8.77,
-      "seal_amount": 105542075,
-      "seal_amount_str": "10554万",
-      "first_seal_time": "094503",
+      "turnover": 4.21,
+      "seal_amount": 179936971,
+      "seal_amount_str": "17994万",
+      "first_seal_time": "094318",
       "board_num": 1,
-      "float_mcap": 7068417937,
-      "float_mcap_str": "70.7亿",
-      "volume": 606816656,
-      "volume_str": "60682万",
-      "sector": "消费电子",
+      "float_mcap": 12105500673,
+      "float_mcap_str": "121.1亿",
+      "volume": 500534528,
+      "volume_str": "50053万",
+      "sector": "电力",
       "board_stat": "1/1",
       "is_hot_sector": true,
       "auction": {
@@ -445,23 +389,28 @@
       }
     },
     {
-      "code": "600664",
-      "name": "哈药股份",
-      "price": 4.94,
-      "change_pct": 10.02,
-      "turnover": 11.78,
-      "seal_amount_str": "26458万",
-      "seal_amount": 264581944,
-      "first_seal_time": "092502",
-      "float_mcap_str": "124.4亿",
-      "sector": "化学制药",
-      "failed_rules": [
-        "首板"
-      ],
+      "code": "600722",
+      "name": "金牛化工",
+      "price": 8.53,
+      "change_pct": 10.06,
+      "turnover": 7.24,
+      "seal_amount": 92155467,
+      "seal_amount_str": "9216万",
+      "first_seal_time": "093849",
+      "board_num": 1,
+      "float_mcap": 5803126836,
+      "float_mcap_str": "58.0亿",
+      "volume": 410446560,
+      "volume_str": "41045万",
+      "sector": "化学原料",
+      "board_stat": "1/1",
+      "is_hot_sector": true,
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -476,23 +425,28 @@
       }
     },
     {
-      "code": "002739",
-      "name": "儒意电影",
-      "price": 10.32,
-      "change_pct": 10.02,
-      "turnover": 3.98,
-      "seal_amount_str": "25014万",
-      "seal_amount": 250140360,
-      "first_seal_time": "093033",
-      "float_mcap_str": "214.9亿",
-      "sector": "影视院线",
-      "failed_rules": [
-        "首板"
-      ],
+      "code": "600644",
+      "name": "乐山电力",
+      "price": 9.01,
+      "change_pct": 10.01,
+      "turnover": 7.56,
+      "seal_amount": 63540276,
+      "seal_amount_str": "6354万",
+      "first_seal_time": "094528",
+      "board_num": 1,
+      "float_mcap": 5210670570,
+      "float_mcap_str": "52.1亿",
+      "volume": 387549168,
+      "volume_str": "38755万",
+      "sector": "电力",
+      "board_stat": "1/1",
+      "is_hot_sector": true,
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -507,23 +461,25 @@
       }
     },
     {
-      "code": "603496",
-      "name": "恒为科技",
-      "price": 25.08,
-      "change_pct": 10.0,
-      "turnover": 7.65,
-      "seal_amount_str": "16611万",
-      "seal_amount": 166110307,
-      "first_seal_time": "095812",
-      "float_mcap_str": "80.3亿",
-      "sector": "计算机设",
+      "code": "603118",
+      "name": "共进股份",
+      "price": 14.95,
+      "change_pct": 10.01,
+      "turnover": 15.57,
+      "seal_amount_str": "8589万",
+      "seal_amount": 85886255,
+      "first_seal_time": "095016",
+      "float_mcap_str": "117.7亿",
+      "sector": "通信设备",
       "failed_rules": [
         "热点板块"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -538,23 +494,192 @@
       }
     },
     {
-      "code": "600602",
-      "name": "云赛智联",
-      "price": 18.26,
-      "change_pct": 10.0,
-      "turnover": 3.19,
-      "seal_amount_str": "16252万",
-      "seal_amount": 162519971,
-      "first_seal_time": "093859",
-      "float_mcap_str": "196.2亿",
-      "sector": "软件开发",
+      "code": "003001",
+      "name": "中岩大地",
+      "price": 19.56,
+      "change_pct": 10.01,
+      "turnover": 5.09,
+      "seal_amount_str": "8487万",
+      "seal_amount": 84874419,
+      "first_seal_time": "093000",
+      "float_mcap_str": "22.4亿",
+      "sector": "专业工程",
       "failed_rules": [
-        "热点板块"
+        "市值30-100亿"
       ],
       "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
         "status": "no_data",
         "score": 0,
         "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "001258",
+      "name": "立新能源",
+      "price": 8.27,
+      "change_pct": 9.97,
+      "turnover": 6.15,
+      "seal_amount_str": "8068万",
+      "seal_amount": 80677158,
+      "first_seal_time": "094600",
+      "float_mcap_str": "77.2亿",
+      "sector": "电力",
+      "failed_rules": [
+        "首板"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "000899",
+      "name": "赣能股份",
+      "price": 10.7,
+      "change_pct": 9.97,
+      "turnover": 3.91,
+      "seal_amount_str": "7741万",
+      "seal_amount": 77406421,
+      "first_seal_time": "110854",
+      "float_mcap_str": "104.4亿",
+      "sector": "电力",
+      "failed_rules": [
+        "<10:00"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "300795",
+      "name": "米奥会展",
+      "price": 10.48,
+      "change_pct": 20.05,
+      "turnover": 9.44,
+      "seal_amount_str": "6849万",
+      "seal_amount": 68491652,
+      "first_seal_time": "093839",
+      "float_mcap_str": "18.2亿",
+      "sector": "专业服务",
+      "failed_rules": [
+        "主板",
+        "市值30-100亿"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "600982",
+      "name": "宁波能源",
+      "price": 5.09,
+      "change_pct": 9.94,
+      "turnover": 8.4,
+      "seal_amount_str": "6362万",
+      "seal_amount": 63621437,
+      "first_seal_time": "111748",
+      "float_mcap_str": "56.9亿",
+      "sector": "电力",
+      "failed_rules": [
+        "<10:00"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "600236",
+      "name": "桂冠电力",
+      "price": 10.62,
+      "change_pct": 10.05,
+      "turnover": 0.47,
+      "seal_amount_str": "6043万",
+      "seal_amount": 60427800,
+      "first_seal_time": "102143",
+      "float_mcap_str": "837.1亿",
+      "sector": "电力",
+      "failed_rules": [
+        "换手5-15%",
+        "市值30-100亿"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -571,114 +696,23 @@
     {
       "code": "002632",
       "name": "道明光学",
-      "price": 9.63,
-      "change_pct": 10.06,
-      "turnover": 2.63,
-      "seal_amount_str": "13417万",
-      "seal_amount": 134171323,
-      "first_seal_time": "092500",
-      "float_mcap_str": "55.3亿",
+      "price": 10.59,
+      "change_pct": 9.97,
+      "turnover": 12.63,
+      "seal_amount_str": "5678万",
+      "seal_amount": 56776167,
+      "first_seal_time": "093009",
+      "float_mcap_str": "60.8亿",
       "sector": "塑料",
       "failed_rules": [
-        "换手5-15%"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "603716",
-      "name": "塞力医疗",
-      "price": 16.12,
-      "change_pct": 10.03,
-      "turnover": 12.13,
-      "seal_amount_str": "12736万",
-      "seal_amount": 127361895,
-      "first_seal_time": "111346",
-      "float_mcap_str": "36.4亿",
-      "sector": "医药商业",
-      "failed_rules": [
-        "<10:00"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "601595",
-      "name": "上海电影",
-      "price": 18.16,
-      "change_pct": 9.99,
-      "turnover": 3.21,
-      "seal_amount_str": "10722万",
-      "seal_amount": 107216640,
-      "first_seal_time": "105259",
-      "float_mcap_str": "81.4亿",
-      "sector": "影视院线",
-      "failed_rules": [
-        "<10:00"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "000676",
-      "name": "智度股份",
-      "price": 6.22,
-      "change_pct": 10.09,
-      "turnover": 6.61,
-      "seal_amount_str": "10368万",
-      "seal_amount": 103683046,
-      "first_seal_time": "094645",
-      "float_mcap_str": "78.3亿",
-      "sector": "广告营销",
-      "failed_rules": [
         "首板"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -693,305 +727,26 @@
       }
     },
     {
-      "code": "001365",
-      "name": "天海电子",
-      "price": 43.25,
-      "change_pct": 9.99,
-      "turnover": 19.25,
-      "seal_amount_str": "9791万",
-      "seal_amount": 97911728,
-      "first_seal_time": "101900",
-      "float_mcap_str": "24.9亿",
-      "sector": "汽车零部",
-      "failed_rules": [
-        "市值30-100亿",
-        "价<40"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "603108",
-      "name": "润达医疗",
-      "price": 10.31,
-      "change_pct": 10.03,
-      "turnover": 7.38,
-      "seal_amount_str": "9027万",
-      "seal_amount": 90273411,
-      "first_seal_time": "112544",
-      "float_mcap_str": "62.3亿",
-      "sector": "医疗服务",
-      "failed_rules": [
-        "<10:00"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "603407",
-      "name": "长裕集团",
-      "price": 65.64,
-      "change_pct": 10.01,
-      "turnover": 7.97,
-      "seal_amount_str": "8372万",
-      "seal_amount": 83722113,
-      "first_seal_time": "095154",
-      "float_mcap_str": "23.6亿",
-      "sector": "化学原料",
-      "failed_rules": [
-        "市值30-100亿",
-        "价<40"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "002350",
-      "name": "北京科锐",
-      "price": 16.06,
+      "code": "600095",
+      "name": "湘财股份",
+      "price": 8.69,
       "change_pct": 10.0,
-      "turnover": 5.45,
-      "seal_amount_str": "8333万",
-      "seal_amount": 83331068,
-      "first_seal_time": "101548",
-      "float_mcap_str": "85.2亿",
-      "sector": "电网设备",
-      "failed_rules": [
-        "热点板块"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "002365",
-      "name": "永安药业",
-      "price": 13.18,
-      "change_pct": 10.02,
-      "turnover": 10.52,
-      "seal_amount_str": "8277万",
-      "seal_amount": 82771059,
-      "first_seal_time": "093324",
-      "float_mcap_str": "32.3亿",
-      "sector": "化学制药",
-      "failed_rules": [
-        "首板"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "000829",
-      "name": "天音控股",
-      "price": 9.12,
-      "change_pct": 10.01,
-      "turnover": 5.11,
-      "seal_amount_str": "8225万",
-      "seal_amount": 82246959,
-      "first_seal_time": "095103",
-      "float_mcap_str": "93.4亿",
-      "sector": "专业连锁",
-      "failed_rules": [
-        "热点板块"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "300968",
-      "name": "格林精密",
-      "price": 10.24,
-      "change_pct": 20.05,
-      "turnover": 3.93,
-      "seal_amount_str": "7850万",
-      "seal_amount": 78504448,
-      "first_seal_time": "093633",
-      "float_mcap_str": "42.3亿",
-      "sector": "消费电子",
-      "failed_rules": [
-        "主板"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "603327",
-      "name": "福蓉科技",
-      "price": 8.57,
-      "change_pct": 10.01,
-      "turnover": 2.18,
-      "seal_amount_str": "7784万",
-      "seal_amount": 77842449,
-      "first_seal_time": "093002",
-      "float_mcap_str": "89.6亿",
-      "sector": "消费电子",
-      "failed_rules": [
-        "换手5-15%"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "002127",
-      "name": "南极电商",
-      "price": 3.23,
-      "change_pct": 9.86,
-      "turnover": 6.21,
-      "seal_amount_str": "5876万",
-      "seal_amount": 58762421,
-      "first_seal_time": "102221",
-      "float_mcap_str": "64.4亿",
-      "sector": "互联网电",
-      "failed_rules": [
-        "热点板块"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "600611",
-      "name": "大众交通",
-      "price": 4.09,
-      "change_pct": 9.95,
-      "turnover": 5.64,
-      "seal_amount_str": "5798万",
-      "seal_amount": 57980985,
-      "first_seal_time": "134133",
-      "float_mcap_str": "63.9亿",
-      "sector": "铁路公路",
+      "turnover": 4.03,
+      "seal_amount_str": "5159万",
+      "seal_amount": 51585578,
+      "first_seal_time": "103444",
+      "float_mcap_str": "248.5亿",
+      "sector": "证券Ⅱ",
       "failed_rules": [
         "<10:00",
         "热点板块"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -1006,23 +761,159 @@
       }
     },
     {
-      "code": "000892",
-      "name": "欢瑞世纪",
-      "price": 3.87,
-      "change_pct": 9.94,
-      "turnover": 10.8,
-      "seal_amount_str": "5635万",
-      "seal_amount": 56352618,
-      "first_seal_time": "093457",
-      "float_mcap_str": "27.5亿",
-      "sector": "影视院线",
+      "code": "000722",
+      "name": "湖南发展",
+      "price": 13.83,
+      "change_pct": 10.02,
+      "turnover": 11.88,
+      "seal_amount_str": "3949万",
+      "seal_amount": 39493805,
+      "first_seal_time": "145354",
+      "float_mcap_str": "64.2亿",
+      "sector": "电力",
       "failed_rules": [
-        "市值30-100亿"
+        "<10:00",
+        "封单>5000万"
       ],
       "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
         "status": "no_data",
         "score": 0,
         "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "601369",
+      "name": "陕鼓动力",
+      "price": 9.5,
+      "change_pct": 9.95,
+      "turnover": 1.99,
+      "seal_amount_str": "3665万",
+      "seal_amount": 36648150,
+      "first_seal_time": "095202",
+      "float_mcap_str": "162.1亿",
+      "sector": "专用设备",
+      "failed_rules": [
+        "封单>5000万",
+        "换手5-15%"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "002766",
+      "name": "索菱股份",
+      "price": 3.94,
+      "change_pct": 10.06,
+      "turnover": 3.48,
+      "seal_amount_str": "3504万",
+      "seal_amount": 35043148,
+      "first_seal_time": "093000",
+      "float_mcap_str": "33.8亿",
+      "sector": "汽车零部",
+      "failed_rules": [
+        "封单>5000万"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "000037",
+      "name": "深南电A",
+      "price": 9.2,
+      "change_pct": 10.05,
+      "turnover": 10.66,
+      "seal_amount_str": "3326万",
+      "seal_amount": 33258000,
+      "first_seal_time": "100009",
+      "float_mcap_str": "31.2亿",
+      "sector": "电力",
+      "failed_rules": [
+        "封单>5000万"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
+      },
+      "opening": {
+        "status": "no_data",
+        "score": 0,
+        "signals": []
+      },
+      "enhanced_score": 0,
+      "score_breakdown": {
+        "auction": 0,
+        "opening": 0,
+        "alpha_factor": 0
+      }
+    },
+    {
+      "code": "600227",
+      "name": "赤天化",
+      "price": 3.06,
+      "change_pct": 10.07,
+      "turnover": 19.81,
+      "seal_amount_str": "3243万",
+      "seal_amount": 32425902,
+      "first_seal_time": "093934",
+      "float_mcap_str": "39.1亿",
+      "sector": "农化制品",
+      "failed_rules": [
+        "封单>5000万"
+      ],
+      "auction": {
+        "status": "ok",
+        "signals": [],
+        "score": 0,
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -1039,53 +930,24 @@
     {
       "code": "603567",
       "name": "珍宝岛",
-      "price": 5.48,
+      "price": 6.03,
       "change_pct": 10.04,
-      "turnover": 4.93,
-      "seal_amount_str": "5122万",
-      "seal_amount": 51216480,
-      "first_seal_time": "133219",
-      "float_mcap_str": "51.5亿",
+      "turnover": 11.12,
+      "seal_amount_str": "3102万",
+      "seal_amount": 31019942,
+      "first_seal_time": "093646",
+      "float_mcap_str": "56.6亿",
       "sector": "中药Ⅱ",
-      "failed_rules": [
-        "<10:00"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "600162",
-      "name": "香江控股",
-      "price": 2.78,
-      "change_pct": 9.88,
-      "turnover": 10.56,
-      "seal_amount_str": "4540万",
-      "seal_amount": 45399276,
-      "first_seal_time": "093057",
-      "float_mcap_str": "90.9亿",
-      "sector": "房地产开",
       "failed_rules": [
         "首板",
         "封单>5000万"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -1100,23 +962,25 @@
       }
     },
     {
-      "code": "002045",
-      "name": "国光电器",
-      "price": 8.34,
-      "change_pct": 10.03,
-      "turnover": 5.5,
-      "seal_amount_str": "4517万",
-      "seal_amount": 45171066,
-      "first_seal_time": "093745",
-      "float_mcap_str": "46.8亿",
-      "sector": "消费电子",
+      "code": "605011",
+      "name": "杭州热电",
+      "price": 18.48,
+      "change_pct": 10.0,
+      "turnover": 3.65,
+      "seal_amount_str": "2445万",
+      "seal_amount": 24454584,
+      "first_seal_time": "101056",
+      "float_mcap_str": "73.9亿",
+      "sector": "电力",
       "failed_rules": [
         "封单>5000万"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -1131,24 +995,26 @@
       }
     },
     {
-      "code": "002881",
-      "name": "美格智能",
-      "price": 39.05,
+      "code": "001388",
+      "name": "信通电子",
+      "price": 24.74,
       "change_pct": 10.0,
-      "turnover": 6.79,
-      "seal_amount_str": "4299万",
-      "seal_amount": 42990145,
-      "first_seal_time": "100742",
-      "float_mcap_str": "71.1亿",
-      "sector": "通信设备",
+      "turnover": 15.3,
+      "seal_amount_str": "2071万",
+      "seal_amount": 20713020,
+      "first_seal_time": "094524",
+      "float_mcap_str": "31.0亿",
+      "sector": "电网设备",
       "failed_rules": [
         "封单>5000万",
         "热点板块"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -1163,55 +1029,26 @@
       }
     },
     {
-      "code": "603178",
-      "name": "圣龙股份",
-      "price": 15.74,
-      "change_pct": 9.99,
-      "turnover": 5.93,
-      "seal_amount_str": "2130万",
-      "seal_amount": 21296220,
-      "first_seal_time": "095318",
-      "float_mcap_str": "37.2亿",
-      "sector": "汽车零部",
+      "code": "000779",
+      "name": "甘咨询",
+      "price": 12.23,
+      "change_pct": 9.98,
+      "turnover": 21.51,
+      "seal_amount_str": "425万",
+      "seal_amount": 4246256,
+      "first_seal_time": "101854",
+      "float_mcap_str": "56.8亿",
+      "sector": "工程咨询",
       "failed_rules": [
-        "封单>5000万"
+        "封单>5000万",
+        "换手5-15%"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
-      },
-      "opening": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
-      },
-      "enhanced_score": 0,
-      "score_breakdown": {
-        "auction": 0,
-        "opening": 0,
-        "alpha_factor": 0
-      }
-    },
-    {
-      "code": "000504",
-      "name": "南华生物",
-      "price": 9.36,
-      "change_pct": 9.99,
-      "turnover": 8.73,
-      "seal_amount_str": "1962万",
-      "seal_amount": 19623240,
-      "first_seal_time": "093918",
-      "float_mcap_str": "30.8亿",
-      "sector": "医疗服务",
-      "failed_rules": [
-        "首板",
-        "封单>5000万"
-      ],
-      "auction": {
-        "status": "no_data",
-        "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
