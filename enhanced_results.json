@@ -1,11 +1,11 @@
 {
   "date": "20260722",
-  "enhanced_at": "2026-07-22 06:46:30",
+  "enhanced_at": "2026-07-22 07:12:16",
   "summary": {
     "total_limit_ups": 121,
     "candidates": 1,
     "near_miss": 42,
-    "auction_ok": 1,
+    "auction_ok": 2,
     "opening_ok": 0
   },
   "top_picks": [
@@ -61,9 +61,11 @@
         "市值30-100亿"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
@@ -383,9 +385,11 @@
         "市值30-100亿"
       ],
       "auction": {
-        "status": "no_data",
+        "status": "ok",
+        "signals": [],
         "score": 0,
-        "signals": []
+        "price_trend_pct": 0.0,
+        "total_auction_vol": 0
       },
       "opening": {
         "status": "no_data",
