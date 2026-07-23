@@ -1,446 +1,1156 @@
 {
-  "date": "20260723",
-  "scanned_at": "2026-07-23 07:15:21",
-  "total_limit_ups": 47,
+  "date": "20260724",
+  "scanned_at": "2026-07-24 06:47:23",
+  "total_limit_ups": 116,
   "stages": {
-    "total": 47,
+    "total": 116,
     "excl_st": 0,
-    "excl_board": 6,
-    "excl_not_first": 12,
-    "excl_late_seal": 12,
-    "excl_low_seal": 23,
-    "excl_turnover": 12,
-    "excl_mcap": 15,
+    "excl_board": 12,
+    "excl_not_first": 15,
+    "excl_late_seal": 60,
+    "excl_low_seal": 58,
+    "excl_turnover": 31,
+    "excl_mcap": 30,
     "excl_price": 8,
-    "excl_sector": 12,
-    "candidates": 3
+    "excl_sector": 44,
+    "candidates": 12
   },
   "hot_sectors": [
+    {
+      "sector": "电网设备",
+      "count": 29
+    },
     {
       "sector": "电力",
       "count": 8
     },
     {
-      "sector": "化学制药",
+      "sector": "专用设备",
+      "count": 6
+    },
+    {
+      "sector": "通用设备",
+      "count": 4
+    },
+    {
+      "sector": "房地产开",
+      "count": 4
+    },
+    {
+      "sector": "化学原料",
+      "count": 4
+    },
+    {
+      "sector": "化学制品",
       "count": 3
     },
     {
-      "sector": "家居用品",
+      "sector": "工业金属",
       "count": 3
     },
     {
-      "sector": "半导体",
+      "sector": "纺织制造",
       "count": 3
     },
     {
-      "sector": "电网设备",
-      "count": 3
-    },
-    {
-      "sector": "贵金属",
+      "sector": "电池",
       "count": 3
     },
     {
       "sector": "中药Ⅱ",
-      "count": 2
+      "count": 3
     },
     {
-      "sector": "IT服务Ⅱ",
-      "count": 2
-    },
-    {
-      "sector": "消费电子",
-      "count": 2
-    },
-    {
-      "sector": "通信设备",
-      "count": 2
-    },
-    {
-      "sector": "化学原料",
-      "count": 2
-    },
-    {
-      "sector": "塑料",
+      "sector": "化学制药",
       "count": 2
     }
   ],
   "candidates": [
     {
-      "code": "600396",
-      "name": "华电辽能",
-      "price": 14.92,
-      "change_pct": 10.03,
-      "turnover": 16.79,
-      "seal_amount": 155594712,
-      "seal_amount_str": "15559万",
-      "first_seal_time": "101607",
+      "code": "601678",
+      "name": "滨化股份",
+      "price": 6.22,
+      "change_pct": 10.09,
+      "turnover": 6.47,
+      "seal_amount": 129200795,
+      "seal_amount_str": "12920万",
+      "first_seal_time": "093730",
       "board_num": 1,
-      "float_mcap": 21972785709,
-      "float_mcap_str": "219.7亿",
-      "volume": 3552209728,
-      "volume_str": "355221万",
-      "sector": "电力",
-      "board_stat": "3/2",
+      "float_mcap": 12709551636,
+      "float_mcap_str": "127.1亿",
+      "volume": 813510880,
+      "volume_str": "81351万",
+      "sector": "化学原料",
+      "board_stat": "1/1",
       "is_hot_sector": true
     },
     {
-      "code": "000566",
-      "name": "海南海药",
-      "price": 5.21,
-      "change_pct": 9.92,
-      "turnover": 10.99,
-      "seal_amount": 89103811,
-      "seal_amount_str": "8910万",
-      "first_seal_time": "095354",
+      "code": "000533",
+      "name": "顺钠股份",
+      "price": 8.68,
+      "change_pct": 10.01,
+      "turnover": 4.18,
+      "seal_amount": 121593076,
+      "seal_amount_str": "12159万",
+      "first_seal_time": "093927",
       "board_num": 1,
-      "float_mcap": 6755992647,
-      "float_mcap_str": "67.6亿",
-      "volume": 719071648,
-      "volume_str": "71907万",
-      "sector": "化学制药",
+      "float_mcap": 5944952832,
+      "float_mcap_str": "59.4亿",
+      "volume": 243846219,
+      "volume_str": "24385万",
+      "sector": "电网设备",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "002083",
+      "name": "孚日股份",
+      "price": 10.47,
+      "change_pct": 9.98,
+      "turnover": 5.64,
+      "seal_amount": 110194656,
+      "seal_amount_str": "11019万",
+      "first_seal_time": "095939",
+      "board_num": 1,
+      "float_mcap": 9911310455,
+      "float_mcap_str": "99.1亿",
+      "volume": 547465056,
+      "volume_str": "54747万",
+      "sector": "纺织制造",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "002298",
+      "name": "中电鑫龙",
+      "price": 7.36,
+      "change_pct": 10.01,
+      "turnover": 4.51,
+      "seal_amount": 105071691,
+      "seal_amount_str": "10507万",
+      "first_seal_time": "094339",
+      "board_num": 1,
+      "float_mcap": 4863171424,
+      "float_mcap_str": "48.6亿",
+      "volume": 213590045,
+      "volume_str": "21359万",
+      "sector": "电网设备",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "600550",
+      "name": "保变电气",
+      "price": 11.65,
+      "change_pct": 10.01,
+      "turnover": 3.42,
+      "seal_amount": 92574231,
+      "seal_amount_str": "9257万",
+      "first_seal_time": "101951",
+      "board_num": 1,
+      "float_mcap": 21453806792,
+      "float_mcap_str": "214.5亿",
+      "volume": 703789456,
+      "volume_str": "70379万",
+      "sector": "电网设备",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "002218",
+      "name": "拓日新能",
+      "price": 3.82,
+      "change_pct": 10.09,
+      "turnover": 3.81,
+      "seal_amount": 89064033,
+      "seal_amount_str": "8906万",
+      "first_seal_time": "093230",
+      "board_num": 1,
+      "float_mcap": 5300929383,
+      "float_mcap_str": "53.0亿",
+      "volume": 198562533,
+      "volume_str": "19856万",
+      "sector": "电力",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "603567",
+      "name": "珍宝岛",
+      "price": 6.5,
+      "change_pct": 9.98,
+      "turnover": 11.46,
+      "seal_amount": 84320307,
+      "seal_amount_str": "8432万",
+      "first_seal_time": "100510",
+      "board_num": 1,
+      "float_mcap": 6106121398,
+      "float_mcap_str": "61.1亿",
+      "volume": 666676560,
+      "volume_str": "66668万",
+      "sector": "中药Ⅱ",
       "board_stat": "6/3",
       "is_hot_sector": true
     },
     {
-      "code": "603803",
-      "name": "瑞斯康达",
-      "price": 10.07,
-      "change_pct": 10.05,
-      "turnover": 5.39,
-      "seal_amount": 55667493,
-      "seal_amount_str": "5567万",
-      "first_seal_time": "102658",
+      "code": "000608",
+      "name": "阳光股份",
+      "price": 6.42,
+      "change_pct": 9.93,
+      "turnover": 5.3,
+      "seal_amount": 79582313,
+      "seal_amount_str": "7958万",
+      "first_seal_time": "095412",
       "board_num": 1,
-      "float_mcap": 4278577418,
-      "float_mcap_str": "42.8亿",
-      "volume": 222154564,
-      "volume_str": "22215万",
-      "sector": "通信设备",
+      "float_mcap": 4785644928,
+      "float_mcap_str": "47.9亿",
+      "volume": 247145522,
+      "volume_str": "24715万",
+      "sector": "房地产开",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "002774",
+      "name": "快意电梯",
+      "price": 16.89,
+      "change_pct": 10.03,
+      "turnover": 3.19,
+      "seal_amount": 74586240,
+      "seal_amount_str": "7459万",
+      "first_seal_time": "094509",
+      "board_num": 1,
+      "float_mcap": 4759064644,
+      "float_mcap_str": "47.6亿",
+      "volume": 147861246,
+      "volume_str": "14786万",
+      "sector": "专用设备",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "600379",
+      "name": "宝光股份",
+      "price": 11.52,
+      "change_pct": 10.03,
+      "turnover": 3.84,
+      "seal_amount": 67299840,
+      "seal_amount_str": "6730万",
+      "first_seal_time": "094955",
+      "board_num": 1,
+      "float_mcap": 3803922017,
+      "float_mcap_str": "38.0亿",
+      "volume": 142304506,
+      "volume_str": "14230万",
+      "sector": "电网设备",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "002112",
+      "name": "三变科技",
+      "price": 14.52,
+      "change_pct": 10.0,
+      "turnover": 6.64,
+      "seal_amount": 61424972,
+      "seal_amount_str": "6142万",
+      "first_seal_time": "101606",
+      "board_num": 1,
+      "float_mcap": 3805395066,
+      "float_mcap_str": "38.1亿",
+      "volume": 244138159,
+      "volume_str": "24414万",
+      "sector": "电网设备",
+      "board_stat": "1/1",
+      "is_hot_sector": true
+    },
+    {
+      "code": "603191",
+      "name": "望变电气",
+      "price": 13.4,
+      "change_pct": 10.02,
+      "turnover": 5.33,
+      "seal_amount": 54471000,
+      "seal_amount_str": "5447万",
+      "first_seal_time": "102036",
+      "board_num": 1,
+      "float_mcap": 4421526162,
+      "float_mcap_str": "44.2亿",
+      "volume": 229329004,
+      "volume_str": "22933万",
+      "sector": "电网设备",
       "board_stat": "1/1",
       "is_hot_sector": true
     }
   ],
   "near_miss": [
     {
-      "code": "001258",
-      "name": "立新能源",
-      "price": 11.01,
+      "code": "601179",
+      "name": "中国西电",
+      "price": 13.65,
       "change_pct": 9.99,
-      "turnover": 6.56,
-      "seal_amount_str": "23686万",
-      "seal_amount": 236862996,
-      "first_seal_time": "093257",
-      "float_mcap_str": "102.8亿",
-      "sector": "电力",
+      "turnover": 3.57,
+      "seal_amount_str": "42794万",
+      "seal_amount": 427942979,
+      "first_seal_time": "100738",
+      "float_mcap_str": "699.7亿",
+      "sector": "电网设备",
       "failed_rules": [
-        "首板"
+        "市值30-100亿"
       ]
     },
     {
-      "code": "000815",
-      "name": "美利云",
-      "price": 16.13,
-      "change_pct": 10.03,
-      "turnover": 12.97,
-      "seal_amount_str": "20672万",
-      "seal_amount": 206719595,
-      "first_seal_time": "092500",
-      "float_mcap_str": "112.1亿",
-      "sector": "IT服务Ⅱ",
-      "failed_rules": [
-        "首板"
-      ]
-    },
-    {
-      "code": "603296",
-      "name": "华勤技术",
-      "price": 87.67,
-      "change_pct": 10.0,
-      "turnover": 3.52,
-      "seal_amount_str": "18273万",
-      "seal_amount": 182726022,
-      "first_seal_time": "094554",
-      "float_mcap_str": "700.1亿",
-      "sector": "消费电子",
-      "failed_rules": [
-        "市值30-100亿",
-        "价<40"
-      ]
-    },
-    {
-      "code": "603893",
-      "name": "瑞芯微",
-      "price": 228.86,
-      "change_pct": 10.0,
-      "turnover": 8.82,
-      "seal_amount_str": "16329万",
-      "seal_amount": 163290236,
-      "first_seal_time": "102623",
-      "float_mcap_str": "967.8亿",
-      "sector": "半导体",
-      "failed_rules": [
-        "市值30-100亿",
-        "价<40"
-      ]
-    },
-    {
-      "code": "002197",
-      "name": "证通电子",
-      "price": 6.97,
-      "change_pct": 9.94,
-      "turnover": 3.66,
-      "seal_amount_str": "15114万",
-      "seal_amount": 151142637,
-      "first_seal_time": "093003",
-      "float_mcap_str": "37.2亿",
-      "sector": "计算机设",
+      "code": "000603",
+      "name": "盛达资源",
+      "price": 24.83,
+      "change_pct": 10.01,
+      "turnover": 10.37,
+      "seal_amount_str": "23953万",
+      "seal_amount": 239527561,
+      "first_seal_time": "100733",
+      "float_mcap_str": "165.5亿",
+      "sector": "贵金属",
       "failed_rules": [
         "首板",
         "热点板块"
       ]
     },
     {
-      "code": "600726",
-      "name": "华电能源",
-      "price": 6.6,
-      "change_pct": 10.0,
-      "turnover": 5.14,
-      "seal_amount_str": "12988万",
-      "seal_amount": 129876120,
-      "first_seal_time": "143628",
-      "float_mcap_str": "493.4亿",
-      "sector": "电力",
-      "failed_rules": [
-        "<10:00",
-        "市值30-100亿"
-      ]
-    },
-    {
-      "code": "603118",
-      "name": "共进股份",
-      "price": 16.42,
+      "code": "000815",
+      "name": "美利云",
+      "price": 17.74,
       "change_pct": 9.98,
-      "turnover": 14.11,
-      "seal_amount_str": "12614万",
-      "seal_amount": 126136798,
-      "first_seal_time": "093123",
-      "float_mcap_str": "129.3亿",
-      "sector": "通信设备",
+      "turnover": 17.62,
+      "seal_amount_str": "22214万",
+      "seal_amount": 222136909,
+      "first_seal_time": "093703",
+      "float_mcap_str": "123.3亿",
+      "sector": "IT服务Ⅱ",
       "failed_rules": [
-        "首板"
-      ]
-    },
-    {
-      "code": "002213",
-      "name": "大为股份",
-      "price": 27.49,
-      "change_pct": 10.0,
-      "turnover": 4.29,
-      "seal_amount_str": "9471万",
-      "seal_amount": 94710169,
-      "first_seal_time": "093330",
-      "float_mcap_str": "56.8亿",
-      "sector": "半导体",
-      "failed_rules": [
-        "首板"
-      ]
-    },
-    {
-      "code": "600403",
-      "name": "大有能源",
-      "price": 5.7,
-      "change_pct": 10.04,
-      "turnover": 6.21,
-      "seal_amount_str": "9234万",
-      "seal_amount": 92336580,
-      "first_seal_time": "104337",
-      "float_mcap_str": "136.3亿",
-      "sector": "煤炭开采",
-      "failed_rules": [
-        "<10:00",
+        "首板",
         "热点板块"
       ]
     },
     {
-      "code": "605162",
-      "name": "新中港",
-      "price": 7.68,
-      "change_pct": 10.03,
-      "turnover": 2.32,
-      "seal_amount_str": "7655万",
-      "seal_amount": 76546928,
-      "first_seal_time": "094152",
-      "float_mcap_str": "34.0亿",
+      "code": "001258",
+      "name": "立新能源",
+      "price": 12.11,
+      "change_pct": 9.99,
+      "turnover": 11.3,
+      "seal_amount_str": "19528万",
+      "seal_amount": 195278594,
+      "first_seal_time": "093145",
+      "float_mcap_str": "113.0亿",
       "sector": "电力",
+      "failed_rules": [
+        "首板"
+      ]
+    },
+    {
+      "code": "002498",
+      "name": "汉缆股份",
+      "price": 5.91,
+      "change_pct": 10.06,
+      "turnover": 2.31,
+      "seal_amount_str": "16266万",
+      "seal_amount": 162659269,
+      "first_seal_time": "094918",
+      "float_mcap_str": "196.6亿",
+      "sector": "电网设备",
       "failed_rules": [
         "换手5-15%"
       ]
     },
     {
-      "code": "002515",
-      "name": "金字火腿",
-      "price": 8.18,
-      "change_pct": 9.95,
-      "turnover": 10.66,
-      "seal_amount_str": "7183万",
-      "seal_amount": 71828154,
-      "first_seal_time": "100424",
-      "float_mcap_str": "90.1亿",
-      "sector": "食品加工",
+      "code": "002240",
+      "name": "盛新锂能",
+      "price": 30.42,
+      "change_pct": 10.02,
+      "turnover": 6.47,
+      "seal_amount_str": "14746万",
+      "seal_amount": 147455170,
+      "first_seal_time": "104648",
+      "float_mcap_str": "277.7亿",
+      "sector": "能源金属",
       "failed_rules": [
+        "<10:00",
         "热点板块"
       ]
     },
     {
-      "code": "000603",
-      "name": "盛达资源",
-      "price": 22.57,
+      "code": "002879",
+      "name": "长缆科技",
+      "price": 16.41,
       "change_pct": 9.99,
-      "turnover": 6.27,
-      "seal_amount_str": "7037万",
-      "seal_amount": 70370754,
-      "first_seal_time": "095051",
-      "float_mcap_str": "150.5亿",
-      "sector": "贵金属",
+      "turnover": 19.17,
+      "seal_amount_str": "14320万",
+      "seal_amount": 143200224,
+      "first_seal_time": "093445",
+      "float_mcap_str": "22.5亿",
+      "sector": "电网设备",
       "failed_rules": [
-        "首板"
-      ]
-    },
-    {
-      "code": "002900",
-      "name": "哈三联",
-      "price": 11.0,
-      "change_pct": 10.0,
-      "turnover": 5.69,
-      "seal_amount_str": "6454万",
-      "seal_amount": 64544150,
-      "first_seal_time": "093539",
-      "float_mcap_str": "17.7亿",
-      "sector": "化学制药",
-      "failed_rules": [
+        "首板",
         "市值30-100亿"
       ]
     },
     {
-      "code": "300834",
-      "name": "星辉环材",
-      "price": 38.08,
-      "change_pct": 20.01,
-      "turnover": 3.23,
-      "seal_amount_str": "5911万",
-      "seal_amount": 59106138,
-      "first_seal_time": "111112",
-      "float_mcap_str": "73.1亿",
-      "sector": "塑料",
+      "code": "600219",
+      "name": "南山铝业",
+      "price": 4.79,
+      "change_pct": 10.11,
+      "turnover": 3.52,
+      "seal_amount_str": "14309万",
+      "seal_amount": 143093859,
+      "first_seal_time": "104255",
+      "float_mcap_str": "550.1亿",
+      "sector": "工业金属",
+      "failed_rules": [
+        "<10:00",
+        "市值30-100亿"
+      ]
+    },
+    {
+      "code": "601606",
+      "name": "长城军工",
+      "price": 29.14,
+      "change_pct": 10.0,
+      "turnover": 4.21,
+      "seal_amount_str": "13424万",
+      "seal_amount": 134239092,
+      "first_seal_time": "131415",
+      "float_mcap_str": "211.0亿",
+      "sector": "地面兵装",
+      "failed_rules": [
+        "<10:00",
+        "热点板块"
+      ]
+    },
+    {
+      "code": "002173",
+      "name": "创新医疗",
+      "price": 18.76,
+      "change_pct": 10.03,
+      "turnover": 14.51,
+      "seal_amount_str": "12542万",
+      "seal_amount": 125422606,
+      "first_seal_time": "133124",
+      "float_mcap_str": "79.0亿",
+      "sector": "医疗服务",
+      "failed_rules": [
+        "<10:00",
+        "热点板块"
+      ]
+    },
+    {
+      "code": "300444",
+      "name": "双杰电气",
+      "price": 9.54,
+      "change_pct": 20.0,
+      "turnover": 17.06,
+      "seal_amount_str": "11771万",
+      "seal_amount": 117713935,
+      "first_seal_time": "130306",
+      "float_mcap_str": "59.9亿",
+      "sector": "电网设备",
       "failed_rules": [
         "主板",
         "<10:00"
       ]
     },
     {
-      "code": "603162",
-      "name": "海通发展",
-      "price": 11.28,
-      "change_pct": 10.05,
-      "turnover": 7.17,
-      "seal_amount_str": "5850万",
-      "seal_amount": 58501464,
-      "first_seal_time": "093839",
-      "float_mcap_str": "47.6亿",
-      "sector": "航运港口",
+      "code": "603399",
+      "name": "永杉锂业",
+      "price": 13.72,
+      "change_pct": 10.02,
+      "turnover": 9.76,
+      "seal_amount_str": "10681万",
+      "seal_amount": 106808828,
+      "first_seal_time": "094907",
+      "float_mcap_str": "70.3亿",
+      "sector": "能源金属",
       "failed_rules": [
         "热点板块"
       ]
     },
     {
-      "code": "000595",
-      "name": "新能股份",
-      "price": 5.02,
-      "change_pct": 10.09,
-      "turnover": 1.3,
-      "seal_amount_str": "5824万",
-      "seal_amount": 58243546,
-      "first_seal_time": "093203",
-      "float_mcap_str": "57.2亿",
-      "sector": "电力",
-      "failed_rules": [
-        "换手5-15%"
-      ]
-    },
-    {
-      "code": "605028",
-      "name": "世茂能源",
-      "price": 24.37,
-      "change_pct": 10.02,
-      "turnover": 1.57,
-      "seal_amount_str": "5226万",
-      "seal_amount": 52256591,
-      "first_seal_time": "093742",
-      "float_mcap_str": "39.0亿",
-      "sector": "电力",
-      "failed_rules": [
-        "换手5-15%"
-      ]
-    },
-    {
-      "code": "000975",
-      "name": "山金国际",
-      "price": 22.52,
+      "code": "002229",
+      "name": "鸿博股份",
+      "price": 10.33,
       "change_pct": 10.01,
-      "turnover": 3.71,
-      "seal_amount_str": "4950万",
-      "seal_amount": 49497901,
-      "first_seal_time": "095503",
-      "float_mcap_str": "568.2亿",
-      "sector": "贵金属",
+      "turnover": 4.84,
+      "seal_amount_str": "10675万",
+      "seal_amount": 106753319,
+      "first_seal_time": "093612",
+      "float_mcap_str": "50.9亿",
+      "sector": "IT服务Ⅱ",
       "failed_rules": [
-        "封单>5000万",
-        "市值30-100亿"
+        "热点板块"
+      ]
+    },
+    {
+      "code": "002165",
+      "name": "红 宝 丽",
+      "price": 6.49,
+      "change_pct": 10.0,
+      "turnover": 11.35,
+      "seal_amount_str": "10283万",
+      "seal_amount": 102825794,
+      "first_seal_time": "110115",
+      "float_mcap_str": "47.2亿",
+      "sector": "化学制品",
+      "failed_rules": [
+        "<10:00"
       ]
     },
     {
       "code": "002412",
       "name": "汉森制药",
-      "price": 6.71,
-      "change_pct": 10.0,
-      "turnover": 7.69,
-      "seal_amount_str": "4218万",
-      "seal_amount": 42182415,
-      "first_seal_time": "105539",
-      "float_mcap_str": "33.4亿",
+      "price": 7.38,
+      "change_pct": 9.99,
+      "turnover": 6.69,
+      "seal_amount_str": "9594万",
+      "seal_amount": 95943114,
+      "first_seal_time": "093848",
+      "float_mcap_str": "36.7亿",
       "sector": "中药Ⅱ",
       "failed_rules": [
+        "首板"
+      ]
+    },
+    {
+      "code": "603026",
+      "name": "石大胜华",
+      "price": 62.82,
+      "change_pct": 10.0,
+      "turnover": 6.56,
+      "seal_amount_str": "9458万",
+      "seal_amount": 94581038,
+      "first_seal_time": "145059",
+      "float_mcap_str": "146.2亿",
+      "sector": "电池",
+      "failed_rules": [
         "<10:00",
+        "价<40"
+      ]
+    },
+    {
+      "code": "002451",
+      "name": "摩恩电气",
+      "price": 6.82,
+      "change_pct": 10.0,
+      "turnover": 4.23,
+      "seal_amount_str": "9280万",
+      "seal_amount": 92803791,
+      "first_seal_time": "130324",
+      "float_mcap_str": "29.9亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00",
+        "市值30-100亿"
+      ]
+    },
+    {
+      "code": "300062",
+      "name": "中能电气",
+      "price": 6.35,
+      "change_pct": 20.04,
+      "turnover": 11.6,
+      "seal_amount_str": "8475万",
+      "seal_amount": 84746242,
+      "first_seal_time": "095336",
+      "float_mcap_str": "29.1亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "主板",
+        "市值30-100亿"
+      ]
+    },
+    {
+      "code": "000595",
+      "name": "新能股份",
+      "price": 5.52,
+      "change_pct": 9.96,
+      "turnover": 0.43,
+      "seal_amount_str": "8116万",
+      "seal_amount": 81157800,
+      "first_seal_time": "092500",
+      "float_mcap_str": "62.9亿",
+      "sector": "电力",
+      "failed_rules": [
+        "首板",
+        "换手5-15%"
+      ]
+    },
+    {
+      "code": "603619",
+      "name": "中曼石油",
+      "price": 23.47,
+      "change_pct": 9.98,
+      "turnover": 3.5,
+      "seal_amount_str": "7864万",
+      "seal_amount": 78636141,
+      "first_seal_time": "093111",
+      "float_mcap_str": "108.5亿",
+      "sector": "油服工程",
+      "failed_rules": [
+        "首板",
+        "热点板块"
+      ]
+    },
+    {
+      "code": "605162",
+      "name": "新中港",
+      "price": 8.45,
+      "change_pct": 10.03,
+      "turnover": 3.08,
+      "seal_amount_str": "7631万",
+      "seal_amount": 76307294,
+      "first_seal_time": "093135",
+      "float_mcap_str": "37.4亿",
+      "sector": "电力",
+      "failed_rules": [
+        "首板"
+      ]
+    },
+    {
+      "code": "600513",
+      "name": "联环药业",
+      "price": 16.57,
+      "change_pct": 10.03,
+      "turnover": 9.7,
+      "seal_amount_str": "7571万",
+      "seal_amount": 75709987,
+      "first_seal_time": "130410",
+      "float_mcap_str": "47.3亿",
+      "sector": "化学制药",
+      "failed_rules": [
+        "<10:00"
+      ]
+    },
+    {
+      "code": "603318",
+      "name": "水发燃气",
+      "price": 8.7,
+      "change_pct": 9.99,
+      "turnover": 10.82,
+      "seal_amount_str": "7301万",
+      "seal_amount": 73013010,
+      "first_seal_time": "094009",
+      "float_mcap_str": "39.9亿",
+      "sector": "燃气Ⅱ",
+      "failed_rules": [
+        "热点板块"
+      ]
+    },
+    {
+      "code": "002560",
+      "name": "通达股份",
+      "price": 5.96,
+      "change_pct": 9.96,
+      "turnover": 8.88,
+      "seal_amount_str": "6496万",
+      "seal_amount": 64961300,
+      "first_seal_time": "130721",
+      "float_mcap_str": "37.7亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00"
+      ]
+    },
+    {
+      "code": "600722",
+      "name": "金牛化工",
+      "price": 10.9,
+      "change_pct": 9.99,
+      "turnover": 19.4,
+      "seal_amount_str": "6443万",
+      "seal_amount": 64433584,
+      "first_seal_time": "110157",
+      "float_mcap_str": "74.2亿",
+      "sector": "化学原料",
+      "failed_rules": [
+        "首板",
+        "<10:00"
+      ]
+    },
+    {
+      "code": "600389",
+      "name": "江山股份",
+      "price": 19.34,
+      "change_pct": 10.01,
+      "turnover": 4.11,
+      "seal_amount_str": "6345万",
+      "seal_amount": 63454694,
+      "first_seal_time": "132219",
+      "float_mcap_str": "83.3亿",
+      "sector": "农化制品",
+      "failed_rules": [
+        "<10:00",
+        "热点板块"
+      ]
+    },
+    {
+      "code": "002546",
+      "name": "新联电子",
+      "price": 8.22,
+      "change_pct": 10.04,
+      "turnover": 5.86,
+      "seal_amount_str": "6205万",
+      "seal_amount": 62054424,
+      "first_seal_time": "130915",
+      "float_mcap_str": "65.9亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00"
+      ]
+    },
+    {
+      "code": "000862",
+      "name": "银星能源",
+      "price": 5.92,
+      "change_pct": 10.04,
+      "turnover": 13.05,
+      "seal_amount_str": "6162万",
+      "seal_amount": 61615940,
+      "first_seal_time": "133403",
+      "float_mcap_str": "37.2亿",
+      "sector": "电力",
+      "failed_rules": [
+        "<10:00"
+      ]
+    },
+    {
+      "code": "600611",
+      "name": "大众交通",
+      "price": 4.2,
+      "change_pct": 9.95,
+      "turnover": 5.93,
+      "seal_amount_str": "6093万",
+      "seal_amount": 60925548,
+      "first_seal_time": "131027",
+      "float_mcap_str": "65.7亿",
+      "sector": "铁路公路",
+      "failed_rules": [
+        "<10:00",
+        "热点板块"
+      ]
+    },
+    {
+      "code": "000155",
+      "name": "川能动力",
+      "price": 12.29,
+      "change_pct": 10.03,
+      "turnover": 4.47,
+      "seal_amount_str": "5709万",
+      "seal_amount": 57090884,
+      "first_seal_time": "112948",
+      "float_mcap_str": "226.9亿",
+      "sector": "电力",
+      "failed_rules": [
+        "<10:00"
+      ]
+    },
+    {
+      "code": "600268",
+      "name": "国电南自",
+      "price": 11.66,
+      "change_pct": 10.0,
+      "turnover": 4.74,
+      "seal_amount_str": "5520万",
+      "seal_amount": 55197087,
+      "first_seal_time": "144339",
+      "float_mcap_str": "118.4亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00"
+      ]
+    },
+    {
+      "code": "603956",
+      "name": "威派格",
+      "price": 5.74,
+      "change_pct": 9.96,
+      "turnover": 2.83,
+      "seal_amount_str": "5331万",
+      "seal_amount": 53308528,
+      "first_seal_time": "094917",
+      "float_mcap_str": "32.7亿",
+      "sector": "专用设备",
+      "failed_rules": [
+        "换手5-15%"
+      ]
+    },
+    {
+      "code": "600409",
+      "name": "三友化工",
+      "price": 6.58,
+      "change_pct": 10.03,
+      "turnover": 2.62,
+      "seal_amount_str": "5305万",
+      "seal_amount": 53046604,
+      "first_seal_time": "130402",
+      "float_mcap_str": "135.8亿",
+      "sector": "化学原料",
+      "failed_rules": [
+        "<10:00",
+        "换手5-15%"
+      ]
+    },
+    {
+      "code": "600230",
+      "name": "沧州大化",
+      "price": 13.49,
+      "change_pct": 10.03,
+      "turnover": 4.89,
+      "seal_amount_str": "5081万",
+      "seal_amount": 50808736,
+      "first_seal_time": "144301",
+      "float_mcap_str": "55.8亿",
+      "sector": "化学制品",
+      "failed_rules": [
+        "<10:00"
+      ]
+    },
+    {
+      "code": "301158",
+      "name": "德石股份",
+      "price": 15.13,
+      "change_pct": 19.98,
+      "turnover": 10.03,
+      "seal_amount_str": "5011万",
+      "seal_amount": 50109349,
+      "first_seal_time": "100115",
+      "float_mcap_str": "28.8亿",
+      "sector": "专用设备",
+      "failed_rules": [
+        "主板",
+        "市值30-100亿"
+      ]
+    },
+    {
+      "code": "002606",
+      "name": "大连电瓷",
+      "price": 13.61,
+      "change_pct": 10.02,
+      "turnover": 9.2,
+      "seal_amount_str": "5002万",
+      "seal_amount": 50019526,
+      "first_seal_time": "133554",
+      "float_mcap_str": "57.3亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00"
+      ]
+    },
+    {
+      "code": "605189",
+      "name": "富春染织",
+      "price": 15.02,
+      "change_pct": 10.04,
+      "turnover": 7.69,
+      "seal_amount_str": "4950万",
+      "seal_amount": 49498319,
+      "first_seal_time": "095327",
+      "float_mcap_str": "35.8亿",
+      "sector": "纺织制造",
+      "failed_rules": [
         "封单>5000万"
       ]
     },
     {
-      "code": "000506",
-      "name": "招金黄金",
-      "price": 13.02,
-      "change_pct": 9.97,
-      "turnover": 9.29,
-      "seal_amount_str": "4108万",
-      "seal_amount": 41075496,
-      "first_seal_time": "112257",
-      "float_mcap_str": "120.9亿",
-      "sector": "贵金属",
+      "code": "603876",
+      "name": "鼎胜新材",
+      "price": 21.1,
+      "change_pct": 10.01,
+      "turnover": 3.93,
+      "seal_amount_str": "4781万",
+      "seal_amount": 47805426,
+      "first_seal_time": "141613",
+      "float_mcap_str": "196.1亿",
+      "sector": "工业金属",
       "failed_rules": [
         "<10:00",
         "封单>5000万"
       ]
     },
     {
-      "code": "600644",
-      "name": "乐山电力",
-      "price": 10.6,
-      "change_pct": 9.96,
-      "turnover": 15.6,
-      "seal_amount_str": "3824万",
-      "seal_amount": 38243888,
-      "first_seal_time": "144735",
-      "float_mcap_str": "61.3亿",
+      "code": "002674",
+      "name": "兴业科技",
+      "price": 22.19,
+      "change_pct": 10.01,
+      "turnover": 8.72,
+      "seal_amount_str": "4389万",
+      "seal_amount": 43887382,
+      "first_seal_time": "145409",
+      "float_mcap_str": "64.9亿",
+      "sector": "纺织制造",
+      "failed_rules": [
+        "<10:00",
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "603861",
+      "name": "白云电器",
+      "price": 12.1,
+      "change_pct": 10.0,
+      "turnover": 3.97,
+      "seal_amount_str": "4352万",
+      "seal_amount": 43515230,
+      "first_seal_time": "144025",
+      "float_mcap_str": "64.0亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00",
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "002379",
+      "name": "宏桥控股",
+      "price": 20.45,
+      "change_pct": 10.01,
+      "turnover": 6.54,
+      "seal_amount_str": "4327万",
+      "seal_amount": 43270155,
+      "first_seal_time": "100639",
+      "float_mcap_str": "232.4亿",
+      "sector": "工业金属",
+      "failed_rules": [
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "002713",
+      "name": "东易日盛",
+      "price": 9.66,
+      "change_pct": 10.02,
+      "turnover": 3.08,
+      "seal_amount_str": "4275万",
+      "seal_amount": 42750330,
+      "first_seal_time": "095306",
+      "float_mcap_str": "50.9亿",
+      "sector": "装修装饰",
+      "failed_rules": [
+        "封单>5000万",
+        "热点板块"
+      ]
+    },
+    {
+      "code": "600343",
+      "name": "航天动力",
+      "price": 18.68,
+      "change_pct": 10.01,
+      "turnover": 8.28,
+      "seal_amount_str": "4059万",
+      "seal_amount": 40586036,
+      "first_seal_time": "134210",
+      "float_mcap_str": "119.2亿",
+      "sector": "通用设备",
+      "failed_rules": [
+        "<10:00",
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "600984",
+      "name": "建设机械",
+      "price": 3.64,
+      "change_pct": 9.97,
+      "turnover": 3.83,
+      "seal_amount_str": "4011万",
+      "seal_amount": 40112326,
+      "first_seal_time": "095117",
+      "float_mcap_str": "45.8亿",
+      "sector": "工程机械",
+      "failed_rules": [
+        "封单>5000万",
+        "热点板块"
+      ]
+    },
+    {
+      "code": "001208",
+      "name": "华菱线缆",
+      "price": 13.61,
+      "change_pct": 10.02,
+      "turnover": 6.96,
+      "seal_amount_str": "3801万",
+      "seal_amount": 38005816,
+      "first_seal_time": "101909",
+      "float_mcap_str": "43.4亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "001382",
+      "name": "新亚电缆",
+      "price": 16.57,
+      "change_pct": 10.03,
+      "turnover": 10.57,
+      "seal_amount_str": "3585万",
+      "seal_amount": 35850852,
+      "first_seal_time": "095409",
+      "float_mcap_str": "10.4亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "封单>5000万",
+        "市值30-100亿"
+      ]
+    },
+    {
+      "code": "605100",
+      "name": "华丰股份",
+      "price": 30.56,
+      "change_pct": 10.01,
+      "turnover": 2.06,
+      "seal_amount_str": "3511万",
+      "seal_amount": 35108733,
+      "first_seal_time": "094825",
+      "float_mcap_str": "72.7亿",
+      "sector": "通用设备",
+      "failed_rules": [
+        "封单>5000万",
+        "换手5-15%"
+      ]
+    },
+    {
+      "code": "600468",
+      "name": "百利电气",
+      "price": 5.54,
+      "change_pct": 9.92,
+      "turnover": 4.04,
+      "seal_amount_str": "3474万",
+      "seal_amount": 34743284,
+      "first_seal_time": "103103",
+      "float_mcap_str": "60.3亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00",
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "002339",
+      "name": "积成电子",
+      "price": 7.04,
+      "change_pct": 10.0,
+      "turnover": 9.34,
+      "seal_amount_str": "3214万",
+      "seal_amount": 32140627,
+      "first_seal_time": "093324",
+      "float_mcap_str": "33.7亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "600980",
+      "name": "北矿科技",
+      "price": 17.67,
+      "change_pct": 10.02,
+      "turnover": 1.03,
+      "seal_amount_str": "2779万",
+      "seal_amount": 27786145,
+      "first_seal_time": "093004",
+      "float_mcap_str": "33.4亿",
+      "sector": "专用设备",
+      "failed_rules": [
+        "封单>5000万",
+        "换手5-15%"
+      ]
+    },
+    {
+      "code": "002300",
+      "name": "太阳电缆",
+      "price": 6.45,
+      "change_pct": 10.07,
+      "turnover": 4.31,
+      "seal_amount_str": "2747万",
+      "seal_amount": 27467408,
+      "first_seal_time": "101900",
+      "float_mcap_str": "46.6亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "600173",
+      "name": "卧龙新能",
+      "price": 6.14,
+      "change_pct": 10.04,
+      "turnover": 3.05,
+      "seal_amount_str": "2092万",
+      "seal_amount": 20916524,
+      "first_seal_time": "104854",
+      "float_mcap_str": "43.0亿",
+      "sector": "房地产开",
+      "failed_rules": [
+        "<10:00",
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "002358",
+      "name": "森源电气",
+      "price": 5.5,
+      "change_pct": 10.0,
+      "turnover": 5.21,
+      "seal_amount_str": "2074万",
+      "seal_amount": 20741600,
+      "first_seal_time": "133736",
+      "float_mcap_str": "51.1亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00",
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "603400",
+      "name": "华之杰",
+      "price": 37.24,
+      "change_pct": 10.01,
+      "turnover": 12.77,
+      "seal_amount_str": "2054万",
+      "seal_amount": 20541584,
+      "first_seal_time": "100746",
+      "float_mcap_str": "13.5亿",
+      "sector": "通用设备",
+      "failed_rules": [
+        "封单>5000万",
+        "市值30-100亿"
+      ]
+    },
+    {
+      "code": "601700",
+      "name": "风范股份",
+      "price": 4.95,
+      "change_pct": 10.0,
+      "turnover": 4.39,
+      "seal_amount_str": "1359万",
+      "seal_amount": 13594754,
+      "first_seal_time": "143454",
+      "float_mcap_str": "56.4亿",
+      "sector": "电网设备",
+      "failed_rules": [
+        "<10:00",
+        "封单>5000万"
+      ]
+    },
+    {
+      "code": "000803",
+      "name": "山高环能",
+      "price": 6.8,
+      "change_pct": 10.03,
+      "turnover": 6.67,
+      "seal_amount_str": "1330万",
+      "seal_amount": 13302160,
+      "first_seal_time": "144406",
+      "float_mcap_str": "31.3亿",
       "sector": "电力",
       "failed_rules": [
         "<10:00",
@@ -448,129 +1158,19 @@
       ]
     },
     {
-      "code": "605196",
-      "name": "华通线缆",
-      "price": 29.63,
-      "change_pct": 9.99,
-      "turnover": 5.19,
-      "seal_amount_str": "3090万",
-      "seal_amount": 30901127,
-      "first_seal_time": "103425",
-      "float_mcap_str": "149.6亿",
-      "sector": "电网设备",
-      "failed_rules": [
-        "<10:00",
-        "封单>5000万"
-      ]
-    },
-    {
-      "code": "603619",
-      "name": "中曼石油",
-      "price": 21.34,
-      "change_pct": 10.0,
-      "turnover": 10.32,
-      "seal_amount_str": "2705万",
-      "seal_amount": 27045142,
-      "first_seal_time": "094143",
-      "float_mcap_str": "98.7亿",
-      "sector": "油服工程",
-      "failed_rules": [
-        "封单>5000万",
-        "热点板块"
-      ]
-    },
-    {
-      "code": "600722",
-      "name": "金牛化工",
-      "price": 9.91,
-      "change_pct": 9.99,
-      "turnover": 20.36,
-      "seal_amount_str": "2648万",
-      "seal_amount": 26482493,
-      "first_seal_time": "095847",
-      "float_mcap_str": "67.4亿",
-      "sector": "化学原料",
+      "code": "000011",
+      "name": "深物业A",
+      "price": 7.51,
+      "change_pct": 9.96,
+      "turnover": 2.43,
+      "seal_amount_str": "1075万",
+      "seal_amount": 10753246,
+      "first_seal_time": "093342",
+      "float_mcap_str": "39.5亿",
+      "sector": "房地产开",
       "failed_rules": [
         "封单>5000万",
         "换手5-15%"
-      ]
-    },
-    {
-      "code": "600594",
-      "name": "益佰制药",
-      "price": 3.56,
-      "change_pct": 9.88,
-      "turnover": 4.09,
-      "seal_amount_str": "2458万",
-      "seal_amount": 24584292,
-      "first_seal_time": "095005",
-      "float_mcap_str": "27.9亿",
-      "sector": "中药Ⅱ",
-      "failed_rules": [
-        "封单>5000万",
-        "市值30-100亿"
-      ]
-    },
-    {
-      "code": "002793",
-      "name": "罗欣药业",
-      "price": 4.94,
-      "change_pct": 10.02,
-      "turnover": 4.03,
-      "seal_amount_str": "2403万",
-      "seal_amount": 24031459,
-      "first_seal_time": "094233",
-      "float_mcap_str": "53.6亿",
-      "sector": "化学制药",
-      "failed_rules": [
-        "封单>5000万"
-      ]
-    },
-    {
-      "code": "002953",
-      "name": "日丰股份",
-      "price": 9.86,
-      "change_pct": 10.04,
-      "turnover": 6.31,
-      "seal_amount_str": "1445万",
-      "seal_amount": 14452896,
-      "first_seal_time": "100645",
-      "float_mcap_str": "27.7亿",
-      "sector": "电网设备",
-      "failed_rules": [
-        "封单>5000万",
-        "市值30-100亿"
-      ]
-    },
-    {
-      "code": "603725",
-      "name": "天安新材",
-      "price": 13.48,
-      "change_pct": 10.04,
-      "turnover": 13.14,
-      "seal_amount_str": "1278万",
-      "seal_amount": 12778608,
-      "first_seal_time": "094029",
-      "float_mcap_str": "41.1亿",
-      "sector": "家居用品",
-      "failed_rules": [
-        "封单>5000万"
-      ]
-    },
-    {
-      "code": "603580",
-      "name": "艾艾精工",
-      "price": 40.03,
-      "change_pct": 10.0,
-      "turnover": 12.61,
-      "seal_amount_str": "1056万",
-      "seal_amount": 10560714,
-      "first_seal_time": "094615",
-      "float_mcap_str": "52.3亿",
-      "sector": "塑料",
-      "failed_rules": [
-        "封单>5000万",
-        "价<40"
       ]
     }
   ]
